@@ -23,7 +23,11 @@ create table PC (
 );
 
 create table chamado (
-	ra varchar(256) not null,
-	id varchar(256) not null,
-	
+	chamadoId varchar(256) not null,
+	tecnicoId varchar(256) not null,
+	ra varchar(256) not null, 
+	pcId varchar(256) not null,
+	prioridade varchar(256) not null,
+	primary key(chamadoId),
+	foreign key(tecnicoId) references usuarios(ra)	
 )
