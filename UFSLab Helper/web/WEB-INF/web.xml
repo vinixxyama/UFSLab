@@ -6,7 +6,7 @@
     </servlet>
     <servlet>
         <servlet-name>Chamado</servlet-name>
-        <servlet-class>Controllers.Chamado</servlet-class>
+        <servlet-class>Controllers.AbrirChamado</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>

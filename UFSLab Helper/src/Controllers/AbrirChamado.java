@@ -14,7 +14,7 @@ import Models.*;
  *
  * @author gabriel
  */
-public class Chamado extends HttpServlet {
+public class AbrirChamado extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
