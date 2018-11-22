@@ -1,0 +1,120 @@
+/* GERAL */
+
+.pc-icon{
+    background-color: #aef0be;
+    border: 1px solid #91eea7;
+    color: #155724;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 30px;
+    margin-left: 4px;
+}
+
+
+.status-icon{
+    width: 12%; 
+    margin-top: 40%;
+    margin-left: -5%;
+    position: absolute;
+}
+
+.working{
+    color: #155724;
+}
+
+.repair{
+    color: #55141b;
+}
+
+.pc-icon:hover{
+    background-color: #6ce98b;
+}
+
+.danger{
+    background-color: #ff919a;
+    border: 1px solid #ff7a87;
+    color: #55141b;
+}
+
+.danger:hover{
+    background-color: #fd6572;
+}
+/* END GERAL */
+
+/* LEC */
+.lec-computers:first-child{
+    margin-top: 90px;
+}
+.lec-computers{
+    margin-bottom: 80px;
+}
+
+
+.lec-bg{
+    background-image: url("../../images/lec-bg.png");
+    background-repeat: no-repeat;
+    
+}
+
+/* END LEC */
+
+
+/* LARS */
+.lars-bg{
+    background-image: url("../../images/lars-bg.png");
+    background-repeat: no-repeat;
+    
+}
+
+.lars-computer:first-child{
+    margin-top: 110px;
+}
+
+.lars-computer{
+    margin-bottom: 86px;
+}
+
+.lars-computer .mid-left{
+    transform: translateX(38%);
+}
+
+.lars-computer .mid-right{
+    transform: translateX(-25%);
+    margin-right: 5px;
+}
+/* END LARS */
+
+/* LSO */
+.lso-bg{
+    background-image: url("../../images/lso-bg.png");
+    background-repeat: no-repeat;
+}
+
+.lso-computer{
+    margin-top: 80px;
+    margin-bottom: 82px;
+}
+
+/* END LSO */
+
+/* LSA */
+.lsa-bg{
+    background-image: url("../../images/lsa-bg.png");
+    background-repeat: no-repeat;
+}
+
+.lsa-computer{
+    margin-top: 50px;
+    padding-left: 50px;
+    padding-right: 45px;
+    margin-bottom: 110px;
+}
+
+.lsa-computer .mid-left{
+    transform: translate(20%, 120%);
+}
+
+.lsa-computer .mid-right{
+    transform: translate(10%, 120%);
+}
+/*END LSA */
