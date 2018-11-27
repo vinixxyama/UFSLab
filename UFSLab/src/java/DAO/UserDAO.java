@@ -25,4 +25,17 @@ public class UserDAO {
         	nome = new String(r.getString("nome"));
     	return nome;	
     }
+    
+    public void registrar(User usuario) throws SQLException
+    {
+        PreparedStatement stmt;
+        ResultSet r; // will store the query's result
+        String SQL;
+        SQL = "INSERT INTO usuario VALUES ('" + usuario.getRA() + "','" +
+                usuario.getNome()+ "','" + usuario.getPassword() + "','" +
+                usuario.getEmail() + ");";
+        stmt = connection.prepareStatement(SQL);
+        r = stmt.executeQuery();
+     
+    }
 }

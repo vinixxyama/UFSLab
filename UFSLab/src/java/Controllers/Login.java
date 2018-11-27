@@ -30,8 +30,8 @@ public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // TODO Auto-generated method stub
-        String username = request.getParameter("login");
-        String password = request.getParameter("pass");
+        String username = request.getParameter("email");
+        String password = request.getParameter("senha");
         UserDAO user;
         try {
             user = new UserDAO();
