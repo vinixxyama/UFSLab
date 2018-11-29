@@ -4,13 +4,33 @@
         <servlet-name>Registrar</servlet-name>
         <servlet-class>Controllers.Registrar</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ChamadosAbertos</servlet-name>
+        <servlet-class>Controllers.ChamadosAbertos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AbrirChamado</servlet-name>
+        <servlet-class>Controllers.AbrirChamado</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Entrar</servlet-name>
+        <servlet-class>Controllers.Entrar</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Registrar</servlet-name>
         <url-pattern>/Registrar</url-pattern>
-        <servlet-name>Login</servlet-name>
-        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChamadosAbertos</servlet-name>
+        <url-pattern>/ChamadosAbertos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>AbrirChamado</servlet-name>
         <url-pattern>/AbrirChamado</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Entrar</servlet-name>
+        <url-pattern>/Entrar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

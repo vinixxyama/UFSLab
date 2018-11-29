@@ -31,4 +31,27 @@ public class ChamadoDAO {
         stmt = connection.prepareStatement(SQL);
         r = stmt.executeQuery();
     }
+    
+    public ArrayList<Chamado> mostrarChamados(String pcId) throws SQLException{
+        ArrayList<Chamado> chamados = new ArrayList<>();
+        PreparedStatement stmt;
+        ResultSet r; // will store the query's result
+        String SQL = "SELECT *"
+                + "FROM chamado WHERE pcId = '" + pcId +"';";
+        stmt = connection.prepareStatement(SQL);
+        r = stmt.executeQuery();
+
+        while (r.next()) {
+
+            Chamado c = new Chamado();
+            c.setChamadoId(r.getString("id"));
+            c.setDescricao(r.getString("descricao"));
+            c.setPrioridade("prioridade");
+            chamados.add(c);
+        }
+
+        return chamados;
+        
+     
+    }
 }
