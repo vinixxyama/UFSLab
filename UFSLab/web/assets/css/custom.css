@@ -69,18 +69,22 @@
 .lars-computer:first-child{
     margin-top: 110px;
 }
+.lars-computer:last-child{
+    margin-top: -10px;
+}
 
 .lars-computer{
-    margin-bottom: 86px;
+    margin-top: 2px;
+    margin-bottom: 85px;
 }
 
 .lars-computer .mid-left{
-    transform: translateX(38%);
+    transform: translateX(40%);
 }
 
 .lars-computer .mid-right{
-    transform: translateX(-25%);
-    margin-right: 5px;
+    transform: translateX(-20%);
+    margin-right: 15px;
 }
 /* END LARS */
 
@@ -95,6 +99,9 @@
     margin-bottom: 82px;
 }
 
+.pc-right{
+    margin-left: 20%;
+}
 /* END LSO */
 
 /* LSA */
@@ -111,10 +118,24 @@
 }
 
 .lsa-computer .mid-left{
-    transform: translate(20%, 120%);
+    transform: translate(20%);
 }
 
 .lsa-computer .mid-right{
-    transform: translate(10%, 120%);
+    transform: translate(10%);
 }
 /*END LSA */
+
+
+/* INDEX */
+
+.title{
+    text-transform: uppercase;
+    color: rgb(65, 65, 65);
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.card:hover{
+    background-color: rgb(240, 240, 240);
+}

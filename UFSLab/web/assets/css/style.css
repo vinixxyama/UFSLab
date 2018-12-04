@@ -2024,8 +2024,9 @@ header .form-inline {
   margin-left: 30px;
   margin-top: 7px; }
 
+
 .stat-widget-one .stat-text {
-  font-size: 14px;
+  font-size: 12.4px;
   color: #868e96; }
 
 .stat-widget-one .stat-digit {
@@ -2340,6 +2341,7 @@ header .form-inline {
     margin-left: 15px; }
   .card-body {
     padding: 15px; }
+  }
   .badges button {
     margin: 2px 0; } }
 
