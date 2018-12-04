@@ -12,13 +12,13 @@ import DAO.*;
  * Servlet implementation class Login
  */
 @WebServlet("/Login")
-public class Login extends HttpServlet {
+public class Entrar extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Login() {
+    public Entrar() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,8 +30,8 @@ public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // TODO Auto-generated method stub
-        String username = request.getParameter("login");
-        String password = request.getParameter("pass");
+        String username = request.getParameter("email");
+        String password = request.getParameter("senha");
         UserDAO user;
         try {
             user = new UserDAO();

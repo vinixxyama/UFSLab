@@ -8,19 +8,19 @@ package Controllers;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import Models.*;
 import DAO.*;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.servlet.RequestDispatcher;
-
 /**
  *
  * @author gabriel
  */
-public class AbrirChamado extends HttpServlet {
+public class Registrar extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,10 +39,10 @@ public class AbrirChamado extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Chamado</title>");
+            out.println("<title>Servlet Registrar</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Chamado at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet Registrar at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -60,28 +60,23 @@ public class AbrirChamado extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("user");
-        String pcId = request.getRequestURL().toString();
-        String descricao = request.getParameter("descricao");
-        Chamado chamado = new Chamado();
         try {
-            ChamadoDAO cham = new ChamadoDAO();
-            chamado.setPcId(pcId);
-            chamado.setDescricao(descricao);
-            chamado.setRa(user.getRA());
-            chamado.setTecnicoId("12345");
-            cham.criarChamado(chamado);
-            PCDAO pcDAO = new PCDAO();
-            pcDAO.atualizarStatus(pcId, '1');
-            RequestDispatcher d = request.getRequestDispatcher("");
-            d.forward(request, response);    
-        } catch (DAOException | SQLException ex) {
-            Logger.getLogger(AbrirChamado.class.getName()).log(Level.SEVERE, null, ex);
+            //processRequest(request, response);
+            User usuario = new User();
+            usuario.setNome(request.getParameter("nome"));
+            usuario.setPassword(request.getParameter("senha"));
+            usuario.setRA(request.getParameter("ra"));
+            usuario.setEmail(request.getParameter("email"));
+            UserDAO usuarioDAO = new UserDAO();
+            usuarioDAO.registrar(usuario);
+        } catch (DAOException ex) {
+            Logger.getLogger(Registrar.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Registrar.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        
     }
+    
 
     /**
      * Handles the HTTP <code>POST</code> method.
