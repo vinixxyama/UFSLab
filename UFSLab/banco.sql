@@ -1,9 +1,3 @@
-/* cria banco de dados */
-create database IHC
-default character set utf8
-default collate utf8_general_ci;
-
-use IHC;
 
 /* cria tabela de usuarios */
 create table usuario (
@@ -12,18 +6,18 @@ create table usuario (
     senha varchar(255) not null,
     email varchar(255) not null,
     primary key (RA)
-) 
+) ;
 
 create table PC(
     ID varchar(255) not null unique,
     sala varchar(255) not null,
     status char not null,
     primary key(ID)
-)
+);
 
 /* cria tabela de boletos */
 create table chamado (
-	id int(11) not null auto_increment,
+	ID int not null,
     tecnicoId varchar(255) not null,
     pcId varchar(255) not null,
     ra varchar(255) not null,
