@@ -43,7 +43,7 @@
 
 /* LEC */
 .lec-computers:first-child{
-    margin-top: 75px;
+    margin-top: 85px;
 }
 .lec-computers{
     margin-bottom: 80px;
@@ -99,6 +99,10 @@
     margin-bottom: 82px;
 }
 
+.lso-computer:last-child{
+    margin-bottom: 100px;
+}
+
 .pc-right{
     margin-left: 20%;
 }
@@ -115,6 +119,10 @@
     padding-left: 50px;
     padding-right: 45px;
     margin-bottom: 110px;
+}
+
+.lsa-computer:last-child{
+    margin-bottom: 230px;
 }
 
 .lsa-computer .mid-left{
@@ -163,7 +171,7 @@
 
 .chamado-tools{
     width: 10%;
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
 }
 
@@ -173,4 +181,17 @@
 
 .chamado-tools .fa-times{
     color: rgb(209, 0, 0);
+}
+
+.chamado-tools .fa-envelope{
+    color: #276966;
+}
+
+.alert-chamados{
+    float: right;
+    color: #fff;
+    font-size: 11px;
+    background: radial-gradient(circle closest-side,#dc3545 0%,#dc3545 100%,rgba(0,0,0,0) 100%);
+    padding: 6px;
+    border-radius: 100px;
 }
