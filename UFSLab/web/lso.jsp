@@ -5,12 +5,15 @@
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="en">
 <!--<![endif]-->
+<%@page import="javax.servlet.http.HttpSession"%>
+<%@page import="Models.*"%>
+<%session.setAtribute("sala", 'lso') %>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>UFSLab - Dashboard</title>
-    <meta name="description" content="UFSLab - Dashboard">
+    <title>UFSLab - LSO</title>
+    <meta name="description" content="UFSLab - LSO">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-icon.png">
@@ -26,6 +29,7 @@
 
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/custom.css">
+
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
 </head>
@@ -49,20 +53,20 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <a href="dashboard.jsp"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <h3 class="menu-title"><i class="menu-icon fa fa-flask"></i> Laboratórios</h3><!-- /.menu-title -->
                     <li>
-                        <a href="lec.html"> <i class="menu-icon fa fa-laptop"></i>LEC - Sala 101 </a>
+                        <a href="widgets.html"> <i class="menu-icon fa fa-laptop"></i>LEC - Sala 107 </a>
                     </li>
                     <li>
-                        <a href="lso.html"> <i class="menu-icon fa fa-code"></i>LSO - Sala 103 </a>
+                        <a href="widgets.html"> <i class="menu-icon fa fa-code"></i>LSO - Sala 109 </a>
                     </li>
                     <li>
-                        <a href="lsa.html"> <i class="menu-icon fa fa-tasks"></i>LSA - Sala 104 </a>
+                        <a href="widgets.html"> <i class="menu-icon fa fa-laptop"></i>LSA - Sala 110 </a>
                     </li>
                     <li>
-                        <a href="lars.html"> <i class="menu-icon fa fa-wifi"></i>LARS - Sala 105 </a>
+                        <a href="widgets.html"> <i class="menu-icon fa fa-wifi"></i>LARS - Sala 111 </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -73,7 +77,7 @@
 
     <!-- Right Panel -->
 
-    <div id="right-panel" class="right-panel">
+    <div id="right-panel" class="right-panel lso-bg">
 
         <!-- Header-->
         <header id="header" class="header">
@@ -162,7 +166,7 @@
                 <div class="col-sm-5">
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="images/user.png" alt="User Avatar">
+                            <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
                         </a>
 
                         <div class="user-menu dropdown-menu">
@@ -175,6 +179,27 @@
                             <a class="nav-link" href="#"><i class="fa fa-power-off"></i> Logout</a>
                         </div>
                     </div>
+
+                    <div class="language-select dropdown" id="language-select">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown"  id="language" aria-haspopup="true" aria-expanded="true">
+                            <i class="flag-icon flag-icon-us"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="language">
+                            <div class="dropdown-item">
+                                <span class="flag-icon flag-icon-fr"></span>
+                            </div>
+                            <div class="dropdown-item">
+                                <i class="flag-icon flag-icon-es"></i>
+                            </div>
+                            <div class="dropdown-item">
+                                <i class="flag-icon flag-icon-us"></i>
+                            </div>
+                            <div class="dropdown-item">
+                                <i class="flag-icon flag-icon-it"></i>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -182,18 +207,19 @@
         <!-- Header-->
 
         <div class="breadcrumbs">
-            <div class="col-sm-4">
+            <div class="col-sm-6">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Dashboard</h1>
+                        <h1>Laboratório Sistemas Operacionais e Distribuídos (LSO)</h1>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-6">
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li class="active">Dashboard</li>
+                            <li>Dashboard</li>
+                            <li class="active">LSO</li>
                         </ol>
                     </div>
                 </div>
@@ -201,84 +227,141 @@
         </div>
 
         <div class="content mt-3">
-            <h4 class="text-center title">Escolha o Laboratório</h4>
-            <div class="col-xl-4 col-lg-6 offset-2">
-                <div class="card">
-                    <div class="card-header">
-                        <strong>LEC </strong>
-                    </div>
-                    <a href="lec.html">
-                        <div class="card-body">
-                            <div class="stat-widget-one">
-                                <div class="stat-icon dib"><i class="fa fa-laptop text-primary border-primary"></i></div>
-                                <div class="stat-content dib">
-                                    <div class="stat-text">Ensino de Computação</div>
-                                    <div class="stat-digit">Sala 101</div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+            <!-- 1ª FILA -->
+            <div class="row lso-computer">
+                 <!-- Esquerda -->
+                 <div class="col-sm-1 offset-1">
+                    <a href="forms-basic.jsp?id=53"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1">
+                        <a href="forms-basic.jsp?id=54"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1">
+                    <a href="forms-basic.jsp?id=55"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i> 
+                </div>
+                <!-- Direita -->
+                <div class="col-sm-1 offset-4">
+                    <a href="forms-basic.jsp?id=56"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i> 
+                </div>
+                <div class="col-sm-1">
+                    <a href="forms-basic.jsp?id=57"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1">
+                    <a href="forms-basic.jsp?id=58"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i> 
                 </div>
             </div>
 
-            <div class="col-xl-4 col-lg-6">
-                <div class="card">
-                    <div class="card-header">
-                        <strong>LSO </strong>
-                        <div class="alert-chamados">10</div>
-                    </div>
-                    <a href="lso.html">
-                        <div class="card-body">
-                            <div class="stat-widget-one">
-                                <div class="stat-icon dib"><i class="fa fa-code text-warning border-warning"></i></div>
-                                <div class="stat-content dib">
-                                    <div class="stat-text">Sistemas Operacionais e Distribuídos</div>
-                                    <div class="stat-digit">Sala 103</div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+            <!-- 2ª FILA -->
+            <div class="row lso-computer">
+                 <!-- Esquerda -->
+                 <div class="col-sm-1 offset-1">
+                    <a href="forms-basic.jsp?id=59"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1">
+                    <a href="forms-basic.jsp?id=60"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i> 
+                </div>
+                <div class="col-sm-1">
+                    <a href="forms-basic.jsp?id=61"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i> 
+                </div>
+                <!-- Direita -->
+                <div class="col-sm-1 offset-4">
+                    <a href="forms-basic.jsp?id=62"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1">
+                    <a href="forms-basic.jsp?id=63"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1">
+                    <a href="forms-basic.jsp?id=64"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-6 offset-2">
-                <div class="card">
-                    <div class="card-header">
-                        <strong>LSA </strong>
-                        <div class="alert-chamados">02</div>
-                    </div>
-                    <a href="lsa.html">
-                        <div class="card-body">
-                            <div class="stat-widget-one">
-                                <div class="stat-icon dib"><i class="fa fa-tasks text-success border-success"></i></div>
-                                <div class="stat-content dib">
-                                    <div class="stat-text">Sistemas Digitais </div>
-                                    <div class="stat-digit">Sala 104</div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+            <!-- 3ª FILA -->
+            <div class="row lso-computer">
+                 <!-- Esquerda -->
+                 <div class="col-sm-1 offset-1">
+                   <a href="forms-basic.jsp?id=65"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1">
+                   <a href="forms-basic.jsp?id=66"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1">
+                   <a href="forms-basic.jsp?id=67"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i> 
+                </div>
+                <!-- Direita -->
+                <div class="col-sm-1 offset-4">
+                    <a href="forms-basic.jsp?id=68"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1">
+                    <a href="forms-basic.jsp?id=69"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1">
+                    <a href="forms-basic.jsp?id=70"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+            </div>
+            <!-- 4ª FILA -->
+            <div class="row lso-computer">
+                <!-- Esquerda -->
+                <div class="col-sm-1 offset-1">
+                   <a href="forms-basic.jsp?id=71"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1">
+                    <a href="forms-basic.jsp?id=72"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1">
+                    <a href="forms-basic.jsp?id=73"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <!-- Direita -->
+                <div class="col-sm-1 offset-4">
+                    <a href="forms-basic.jsp?id=74"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1">
+                   <a href="forms-basic.jsp?id=75"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1">
+                    <a href="forms-basic.jsp?id=76"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+            </div>
+             <!-- 4ª FILA -->
+             <div class="row lso-computer">
+                <!-- Esquerda -->
+                <div class="col-sm-1 offset-1">
+                    <a href="forms-basic.jsp?id=77"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1">
+                    <a href="forms-basic.jsp?id=78"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1">
+                    <a href="forms-basic.jsp?id=79"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
                 </div>
             </div>
 
-            <div class="col-xl-4 col-lg-6">
-                <div class="card">
-                    <div class="card-header">
-                        <strong>LARS </strong>
-                        <div class="alert-chamados">15</div>
-                    </div>
-                    <a href="lars.html">
-                        <div class="card-body">
-                            <div class="stat-widget-one">
-                                <div class="stat-icon dib"><i class="fa fa-wifi text-danger border-danger"></i></div>
-                                <div class="stat-content dib">
-                                    <div class="stat-text">Redes de Computadores e Segurança</div>
-                                    <div class="stat-digit">Sala 105</div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+
         </div> <!-- .content -->
     </div><!-- /#right-panel -->
 

@@ -5,33 +5,37 @@
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="en">
 <!--<![endif]-->
-
+<%@page import="javax.servlet.http.HttpSession"%>
+<%@page import="Models.*"%>
+<%session.setAtribute("sala", 'lars') %>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sufee Admin - HTML5 Admin Template</title>
-    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <title>UFSLab - LARS</title>
+    <meta name="description" content="UFSLab - LARS">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
-
 
     <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
     <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
     <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="vendors/jqvmap/dist/jqvmap.min.css">
+
 
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-
-
 
 </head>
 
 <body>
+
+
     <!-- Left Panel -->
 
     <aside id="left-panel" class="left-panel">
@@ -47,77 +51,21 @@
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="dashboard.jsp"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                    </li>
+                    <h3 class="menu-title"><i class="menu-icon fa fa-flask"></i> Laboratórios</h3><!-- /.menu-title -->
                     <li>
-                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
-                    </li>
-                    <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Components</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Buttons</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Badges</a></li>
-                            <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Tabs</a></li>
-                            <li><i class="fa fa-share-square-o"></i><a href="ui-social-buttons.html">Social Buttons</a></li>
-                            <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">Cards</a></li>
-                            <li><i class="fa fa-exclamation-triangle"></i><a href="ui-alerts.html">Alerts</a></li>
-                            <li><i class="fa fa-spinner"></i><a href="ui-progressbar.html">Progress Bars</a></li>
-                            <li><i class="fa fa-fire"></i><a href="ui-modals.html">Modals</a></li>
-                            <li><i class="fa fa-book"></i><a href="ui-switches.html">Switches</a></li>
-                            <li><i class="fa fa-th"></i><a href="ui-grids.html">Grids</a></li>
-                            <li><i class="fa fa-file-word-o"></i><a href="ui-typgraphy.html">Typography</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="tables-basic.html">Basic Table</a></li>
-                            <li><i class="fa fa-table"></i><a href="tables-data.html">Data Table</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children active dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic Form</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
-                        </ul>
-                    </li>
-
-                    <h3 class="menu-title">Icons</h3><!-- /.menu-title -->
-
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="font-fontawesome.html">Font Awesome</a></li>
-                            <li><i class="menu-icon ti-themify-logo"></i><a href="font-themify.html">Themefy Icons</a></li>
-                        </ul>
+                        <a href="lec.jsp"> <i class="menu-icon fa fa-laptop"></i>LEC - Sala 107 </a>
                     </li>
                     <li>
-                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
+                        <a href="lso.jsp"> <i class="menu-icon fa fa-code"></i>LSO - Sala 109 </a>
                     </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-line-chart"></i><a href="charts-chartjs.html">Chart JS</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="charts-flot.html">Flot Chart</a></li>
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="charts-peity.html">Peity Chart</a></li>
-                        </ul>
+                    <li>
+                        <a href="lsa.jsp"> <i class="menu-icon fa fa-laptop"></i>LSA - Sala 110 </a>
                     </li>
-
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Google Maps</a></li>
-                            <li><i class="menu-icon fa fa-street-view"></i><a href="maps-vector.html">Vector Maps</a></li>
-                        </ul>
-                    </li>
-                    <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Login</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Register</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a></li>
-                        </ul>
+                    <li>
+                        <a href="lars.jsp"> <i class="menu-icon fa fa-wifi"></i>LARS - Sala 111 </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -128,7 +76,7 @@
 
     <!-- Right Panel -->
 
-    <div id="right-panel" class="right-panel">
+    <div id="right-panel" class="right-panel lars-bg">
 
         <!-- Header-->
         <header id="header" class="header">
@@ -258,19 +206,19 @@
         <!-- Header-->
 
         <div class="breadcrumbs">
-            <div class="col-sm-4">
+            <div class="col-sm-6">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Formulário</h1>
+                        <h1>Laboratório Redes de Computadores e Segurança (LARS)</h1>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-6">
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Formulário</a></li>
+                            <li>Dashboard</li>
+                            <li class="active">LARS</li>
                         </ol>
                     </div>
                 </div>
@@ -278,61 +226,151 @@
         </div>
 
         <div class="content mt-3">
-            <div class="animated fadeIn">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong>Editar Chamado</strong>
-                            </div>
-                            <div class="card-body card-block">
-                                <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
-                                    <div class="row form-group">
-                                        <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Descrição</label></div>
-                                        <div class="col-12 col-md-9"><textarea name="textarea-input" id="textarea-input" rows="9" placeholder="Eu estava com um problema que o PC não ligava" class="form-control"></textarea></div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col col-md-3"><label for="exampleFormControlSelect1">Classificar chamado</label></div>
-                                        <div class="col-12 col-md-9">
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                                <label class="form-check-label" for="inlineRadio1">Baixa Prioridade</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                                <label class="form-check-label" for="inlineRadio2">Media</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                                                <label class="form-check-label" for="inlineRadio3">Alta Prioridade</label>
-                                            </div>
-                                        </div>
-                                    </div> 
-                                </form>
-                            </div>
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-primary btn-sm">
-                                    <i class="fa fa-save"></i> Salvar
-                                </button>
-                                <button type="reset" class="btn btn-danger btn-sm">
-                                    <i class="fa fa-rotate-left"></i> Voltar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- .animated -->
-            </div><!-- .content -->
-        </div><!-- /#right-panel -->
-        <!-- Right Panel -->
+            <!-- 1ª FILA -->
+            <div class="row lars-computer">
+                <!-- Esquerda -->
+                <div class="col-sm-1 offset-1">
+                        <a href="forms-basic.jsp?id=92"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i> 
+                </div>
+                <div class="col-sm-1 offset-2 mid-left">
+                        <a href="forms-basic.jsp?id=93"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <!-- Direita -->
+                <div class="col-sm-1 offset-2 mid-right">
+                    <a href="forms-basic.jsp?id=94"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1 offset-2">
+                    <a href="forms-basic.jsp?id=95"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+            </div>
 
+            <!-- 2ª FILA -->
+            <div class="row lars-computer">
+               <!-- Esquerda -->
+                <div class="col-sm-1 offset-1">
+                    <a href="forms-basic.jsp?id=96"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1 offset-2 mid-left">
+                    <a href="forms-basic.jsp?id=97"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <!-- Direita -->
+                <div class="col-sm-1 offset-2 mid-right">
+                    <a href="forms-basic.jsp?id=98"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1 offset-2">
+                    <a href="forms-basic.jsp?id=99"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+            </div>
+            <!-- 3ª FILA -->
+            <div class="row lars-computer">
+                 <!-- Esquerda -->
+                <div class="col-sm-1 offset-1">
+                    <a href="forms-basic.jsp?id=100"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1 offset-2 mid-left">
+                    <a href="forms-basic.jsp?id=101"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <!-- Direita -->
+                <div class="col-sm-1 offset-2 mid-right">
+                    <a href="forms-basic.jsp?id=102"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1 offset-2">
+                    <a href="forms-basic.jsp?id=103"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+            </div>
+            <!-- 4ª FILA -->
+            <div class="row lars-computer">
+                <div class="col-sm-1 offset-1">
+                    <a href="forms-basic.jsp?id=104"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1 offset-2 mid-left">
+                    <a href="forms-basic.jsp?id=105"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <!-- Direita -->
+                <div class="col-sm-1 offset-2 mid-right">
+                    <a href="forms-basic.jsp?id=106"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1 offset-2">
+                    <a href="forms-basic.jsp?id=107"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+
+            </div>
+            <!-- 5ª FILA -->
+            <div class="row lars-computer">
+                <!-- Esquerda -->
+                <div class="col-sm-1 offset-1">
+                    <a href="forms-basic.jsp?id=108"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1 offset-2 mid-left">
+                    <a href="forms-basic.jsp?id=109"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <!-- Direita -->
+                <div class="col-sm-1 offset-2 mid-right">
+                    <a href="forms-basic.jsp?id=110"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1 offset-2">
+                    <a href="forms-basic.jsp?id=111"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+
+           </div>
+
+
+        </div> <!-- .content -->
+    </div><!-- /#right-panel -->
+
+    <!-- Right Panel -->
 
     <script src="vendors/jquery/dist/jquery.min.js"></script>
     <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
-
-    <script src="vendors/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="vendors/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
-
     <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="assets/js/main.js"></script>
+
+
+    <script src="vendors/chart.js/dist/Chart.bundle.min.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/widgets.js"></script>
+    <script src="vendors/jqvmap/dist/jquery.vmap.min.js"></script>
+    <script src="vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <script src="vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script>
+        (function($) {
+            "use strict";
+
+            jQuery('#vmap').vectorMap({
+                map: 'world_en',
+                backgroundColor: null,
+                color: '#ffffff',
+                hoverOpacity: 0.7,
+                selectedColor: '#1de9b6',
+                enableZoom: true,
+                showTooltip: true,
+                values: sample_data,
+                scaleColors: ['#1de9b6', '#03a9f5'],
+                normalizeFunction: 'polynomial'
+            });
+        })(jQuery);
+    </script>
+
 </body>
+
 </html>

@@ -10,10 +10,12 @@ package Models;
  * @author gabriel
  */
 public class Chamado {
+
     private String chamadoId;
     private String tecnicoId;
     private String ra;//id do aluno que abriu o chamado
     private String pcId;
+    private String sala;
     private String prioridade;
     private String descricao;
 
@@ -64,5 +66,13 @@ public class Chamado {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    
+
+    public String getSala() {
+        return sala;
+    }
+
+    public void setSala(String sala) {
+        this.sala = sala;
+    }
+
 }

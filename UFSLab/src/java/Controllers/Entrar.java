@@ -7,12 +7,16 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import DAO.*;
+import Models.User;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Servlet implementation class Login
  */
 @WebServlet("/Login")
 public class Entrar extends HttpServlet {
+
     private static final long serialVersionUID = 1L;
 
     /**
@@ -37,9 +41,15 @@ public class Entrar extends HttpServlet {
             user = new UserDAO();
             String name = user.login(password);
             if (username.equals(name) && !username.isEmpty()) {
-            HttpSession session = request.getSession(false);
-            session.setAttribute("user", user);
-                // successfully logged
+                HttpSession session = request.getSession(false);
+                User usuario = new User();
+                usuario.setEmail(username);
+                usuario.setNome(name);
+                usuario.setPassword(password);
+                session.setAttribute("user", usuario);
+                RequestDispatcher d = request.getRequestDispatcher("/dashboard.jsp");
+                //Logger.getLogger(Registrar.class.getName()).log(Level.SEVERE, d.toString());
+                d.forward(request, response);
             } else {
                 // failed to log in
             }

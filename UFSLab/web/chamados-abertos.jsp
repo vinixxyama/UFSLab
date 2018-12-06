@@ -5,7 +5,9 @@
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="en">
 <!--<![endif]-->
-
+<%@page import="javax.servlet.http.HttpSession"%>
+<%@page import="Models.*"%>
+<% List<Chamado> chamados =(List<Chamado>)request.getAtribute("c_list")%>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,14 +24,13 @@
     <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
     <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
     <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="vendors/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="vendors/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
 
-    <link rel="stylesheet" href="vendors/chosen/chosen.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-
-
-
 </head>
 
 <body>
@@ -49,7 +50,7 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <a href="dashboard.jsp"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
@@ -68,17 +69,17 @@
                             <li><i class="fa fa-file-word-o"></i><a href="ui-typgraphy.html">Typography</a></li>
                         </ul>
                     </li>
-                    <li class="menu-item-has-children dropdown">
+                    <li class="menu-item-has-children active dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-table"></i><a href="tables-basic.html">Basic Table</a></li>
                             <li><i class="fa fa-table"></i><a href="tables-data.html">Data Table</a></li>
                         </ul>
                     </li>
-                    <li class="menu-item-has-children active dropdown">
+                    <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic Form</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.jsp">Basic Form</a></li>
                             <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
                         </ul>
                     </li>
@@ -115,8 +116,8 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Login</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Register</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="index.jsp">Login</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.jsp">Register</a></li>
                             <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a></li>
                         </ul>
                     </li>
@@ -262,7 +263,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Formulário</h1>
+                        <h1>Dashboard</h1>
                     </div>
                 </div>
             </div>
@@ -270,8 +271,8 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Formulário</a></li>
+                            <li><a href="dashboard.jsp">Dashboard</a></li>
+                            <li class="active">Chamados Abertos</li>
                         </ol>
                     </div>
                 </div>
@@ -281,61 +282,100 @@
         <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
-                    <div class="col-lg-12">
+
+                    <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong>Responder Chamado</strong>
+                                <strong class="card-title">Chamados Abertos (LEC 101 - ID 49) </strong>
                             </div>
-                            <div class="card-body card-block">
-                                <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
-                                    <div class="row form-group">
-                                        <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Descrição</label></div>
-                                        <div class="col-12 col-md-9"><textarea name="textarea-input" id="textarea-input" rows="9" placeholder="Digite aqui sua resposta" class="form-control"></textarea></div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col col-md-3"><label for="exampleFormControlSelect1">Agrupar chamados</label></div>
-                                        <div class="col-12 col-md-9">
-                                            <select data-placeholder="Choose a country..." multiple class="standardSelect">
-                                                <option value=""></option>
-                                                <option value="United States">ID: 49</option>
-                                                <option value="United States">ID: 51</option>
-                                                <option value="United States">ID: 44</option>
-                                                <option value="United States">ID: 43</option>
-                                            </select>
-                                        </div>
-                                    </div> 
-                                </form>
-                            </div>
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-primary btn-sm">
-                                    <i class="fa fa-save"></i> Salvar
-                                </button>
-                                <button type="reset" class="btn btn-danger btn-sm">
-                                    <i class="fa fa-rotate-left"></i> Voltar
-                                </button>
+                            <div class="card-body">
+                                <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th class="chamado-desc">Descri��o Breve</th>
+                                            <th class="chamado-class">Prioridade</th>
+                                            <th class="chamado-tools">#</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="chamado-desc">System Architect</td>
+                                            <td class="chamado-class">Media</td>
+                                            <td class="chamado-tools">
+                                                <a href="editar-chamado.jsp"><i class="fa fa-wrench"></i></a>
+                                                <a href="#"><i class="fa fa-times" data-toggle="modal" data-target="#exampleModal"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="chamado-desc">Loco</td>
+                                            <td class="chamado-class">Alta</td>
+                                            <td class="chamado-tools">
+                                                <a href="editar-chamado.jsp"><i class="fa fa-wrench"></i></a>
+                                                <a href="#"><i class="fa fa-times" data-toggle="modal" data-target="#exampleModal"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="chamado-desc">ASdasdasdasdt</td>
+                                            <td class="chamado-class">Baixa</td>
+                                            <td class="chamado-tools">
+                                                <a href="editar-chamado.jsp"><i class="fa fa-wrench"></i></a>
+                                                <a href="#"><i class="fa fa-times" data-toggle="modal" data-target="#exampleModal"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
-                </div><!-- .animated -->
-            </div><!-- .content -->
-        </div><!-- /#right-panel -->
-        <!-- Right Panel -->
+                </div>
+            </div><!-- .animated -->
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Finalizar Chamado</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Você realmente deseja finalizar o chamado?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+                        <button type="button" class="btn btn-danger">Encerrar</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .content -->
 
 
-        <script src="vendors/jquery/dist/jquery.min.js"></script>
-        <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
-        <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="assets/js/main.js"></script>
-        <script src="vendors/chosen/chosen.jquery.min.js"></script>
-        
-        <script>
-            jQuery(document).ready(function() {
-                jQuery(".standardSelect").chosen({
-                    disable_search_threshold: 10,
-                    no_results_text: "Oops, nothing found!",
-                    width: "100%"
-                });
-            });
-        </script>
+    </div><!-- /#right-panel -->
+
+    <!-- Right Panel -->
+
+
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+
+    <script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+    <script src="vendors/jszip/dist/jszip.min.js"></script>
+    <script src="vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="vendors/pdfmake/build/vfs_fonts.js"></script>
+    <script src="vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+    <script src="assets/js/init-scripts/data-table/datatables-init.js"></script>
+
+
 </body>
+
 </html>

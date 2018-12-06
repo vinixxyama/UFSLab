@@ -61,9 +61,11 @@ public class AbrirChamado extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
+        Logger.getLogger(AbrirChamado.class.getName()).log(Level.INFO, request.toString());
         User user = (User) session.getAttribute("user");
         String pcId = request.getRequestURL().toString();
         String descricao = request.getParameter("descricao");
+        
         Chamado chamado = new Chamado();
         try {
             ChamadoDAO cham = new ChamadoDAO();
@@ -74,8 +76,8 @@ public class AbrirChamado extends HttpServlet {
             cham.criarChamado(chamado);
             PCDAO pcDAO = new PCDAO();
             pcDAO.atualizarStatus(pcId, '1');
-            RequestDispatcher d = request.getRequestDispatcher("");
-            d.forward(request, response);    
+     //       RequestDispatcher d = request.getRequestDispatcher("");
+      //      d.forward(request, response);    
         } catch (DAOException | SQLException ex) {
             Logger.getLogger(AbrirChamado.class.getName()).log(Level.SEVERE, null, ex);
         }

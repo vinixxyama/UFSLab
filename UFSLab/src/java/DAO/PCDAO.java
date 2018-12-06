@@ -23,12 +23,12 @@ public class PCDAO {
     
     public void atualizarStatus(String pcId, char status) throws SQLException{
             PreparedStatement stmt;
-        ResultSet r; // will store the query's result
+        int r; // will store the query's result
         String SQL;
         SQL = "UPDATE PC SET status = '" + status + "' WHERE ID = '" + pcId
                 + "';";
         stmt = connection.prepareStatement(SQL);
-        r = stmt.executeQuery();
+        r = stmt.executeUpdate();
     
     }
 

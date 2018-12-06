@@ -23,35 +23,29 @@ public class ChamadoDAO {
 
     public void criarChamado(Chamado chamado) throws SQLException {
         PreparedStatement stmt;
-        ResultSet r; // will store the query's result
+        int r; // will store the query's result
         String SQL;
-        SQL = "INSERT INTO chamado VALUES ('" + chamado.getChamadoId()
-                + "','" + chamado.getTecnicoId() + "','" + chamado.getPcId() + "','" + chamado.getRa() + "','"
+        SQL = "INSERT INTO chamado VALUES (DEFAULT,'" + chamado.getTecnicoId() + "','" + chamado.getPcId() + "','" + chamado.getSala() + "','" + chamado.getRa() + "','"
                 + chamado.getDescricao() + "','" + chamado.getPrioridade() + "');";
         stmt = connection.prepareStatement(SQL);
-        r = stmt.executeQuery();
+        r = stmt.executeUpdate();
     }
-    
-    public ArrayList<Chamado> mostrarChamados(String pcId) throws SQLException{
+
+    public ArrayList<Chamado> mostrarChamados(String pcId) throws SQLException {
         ArrayList<Chamado> chamados = new ArrayList<>();
         PreparedStatement stmt;
         ResultSet r; // will store the query's result
         String SQL = "SELECT *"
-                + "FROM chamado WHERE pcId = '" + pcId +"';";
+                + "FROM chamado WHERE pcId = '" + pcId + "';";
         stmt = connection.prepareStatement(SQL);
         r = stmt.executeQuery();
-
         while (r.next()) {
-
             Chamado c = new Chamado();
             c.setChamadoId(r.getString("id"));
             c.setDescricao(r.getString("descricao"));
             c.setPrioridade("prioridade");
             chamados.add(c);
         }
-
         return chamados;
-        
-     
     }
 }

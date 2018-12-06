@@ -23,8 +23,6 @@
     <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
     <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
 
-
-    <link rel="stylesheet" href="vendors/chosen/chosen.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
@@ -263,7 +261,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Dashboard</h1>
+                        <h1>Formulário</h1>
                     </div>
                 </div>
             </div>
@@ -271,9 +269,8 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Forms</a></li>
-                            <li class="active">Advanced</li>
+                            <li><a href="dashboard.jsp">Dashboard</a></li>
+                            <li><a href="#">Formulário</a></li>
                         </ol>
                     </div>
                 </div>
@@ -282,200 +279,60 @@
 
         <div class="content mt-3">
             <div class="animated fadeIn">
-
                 <div class="row">
-
-                    <div class="col-xs-6 col-sm-6">
+                    <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong>Masked Input</strong> <small> Small Text Mask</small>
+                                <strong>Editar Chamado</strong>
                             </div>
                             <div class="card-body card-block">
-                                <div class="form-group">
-                                    <label class=" form-control-label">Date input</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                        <input class="form-control">
+                                <form action="EditarChamado" method="get" enctype="multipart/form-data" class="form-horizontal">
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Descrição</label></div>
+                                        <div class="col-12 col-md-9"><textarea name="textarea-input" id="textarea-input" rows="9" placeholder="Eu estava com um problema que o PC não ligava" class="form-control"></textarea></div>
                                     </div>
-                                    <small class="form-text text-muted">ex. 99/99/9999</small>
-                                </div>
-                                <div class="form-group">
-                                    <label class=" form-control-label">Phone input</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><i class="fa fa-phone"></i></div>
-                                        <input class="form-control">
-                                    </div>
-                                        <small class="form-text text-muted">ex. (999) 999-9999</small>
-                                </div>
-                                <div class="form-group">
-                                    <label class=" form-control-label">Taxpayer Identification Numbers</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><i class="fa fa-usd"></i></div>
-                                        <input class="form-control">
-                                    </div>
-                                    <small class="form-text text-muted">ex. 99-9999999</small>
-                                </div>
-                                <div class="form-group">
-                                    <label class=" form-control-label">Social Security Number</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><i class="fa fa-male"></i></div>
-                                        <input class="form-control">
-                                    </div>
-                                    <small class="form-text text-muted">ex. 999-99-9999</small>
-                                </div>
-                                <div class="form-group">
-                                    <label class=" form-control-label">Eye Script</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
-                                        <input class="form-control">
-                                    </div>
-                                    <small class="form-text text-muted">ex. ~9.99 ~9.99 999</small>
-                                </div>
-                                <div class="form-group">
-                                    <label class=" form-control-label">Credit Card Number</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><i class="fa fa-credit-card"></i></div>
-                                        <input class="form-control">
-                                    </div>
-                                    <small class="form-text text-muted">ex. 9999 9999 9999 9999</small>
-                                </div>
+                                    <div class="form-group">
+                                        <div class="col col-md-3"><label for="exampleFormControlSelect1">Classificar chamado</label></div>
+                                        <div class="col-12 col-md-9">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                <label class="form-check-label" for="inlineRadio1">Baixa Prioridade</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                                <label class="form-check-label" for="inlineRadio2">Media</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                                <label class="form-check-label" for="inlineRadio3">Alta Prioridade</label>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary btn-sm">
+                                    <i class="fa fa-save"></i> Salvar
+                                </button>
+                                <button type="reset" class="btn btn-danger btn-sm">
+                                    <i class="fa fa-rotate-left"></i> Voltar
+                                </button>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-xs-6 col-sm-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">Standard Select</strong>
-                            </div>
-                            <div class="card-body">
-
-                                <select data-placeholder="Choose a Country..." class="standardSelect" tabindex="1">
-                                    <option value=""></option>
-                                    <option value="United States">United States</option>
-                                    <option value="United Kingdom">United Kingdom</option>
-                                    <option value="Afghanistan">Afghanistan</option>
-                                    <option value="Aland Islands">Aland Islands</option>
-                                    <option value="Albania">Albania</option>
-                                    <option value="Algeria">Algeria</option>
-                                    <option value="American Samoa">American Samoa</option>
-                                    <option value="Andorra">Andorra</option>
-                                    <option value="Angola">Angola</option>
-                                    <option value="Anguilla">Anguilla</option>
-                                    <option value="Antarctica">Antarctica</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">Multi Select</strong>
-                            </div>
-                            <div class="card-body">
-
-                                <select data-placeholder="Choose a country..." multiple class="standardSelect">
-                                    <option value=""></option>
-                                    <option value="United States">United States</option>
-                                    <option value="United Kingdom">United Kingdom</option>
-                                    <option value="Afghanistan">Afghanistan</option>
-                                    <option value="Aland Islands">Aland Islands</option>
-                                    <option value="Albania">Albania</option>
-                                    <option value="Algeria">Algeria</option>
-                                    <option value="American Samoa">American Samoa</option>
-                                    <option value="Andorra">Andorra</option>
-                                    <option value="Angola">Angola</option>
-                                    <option value="Anguilla">Anguilla</option>
-                                    <option value="Antarctica">Antarctica</option>
-                                </select>
-
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">Multi Select with Groups</strong>
-                            </div>
-                            <div class="card-body">
-
-                                <select data-placeholder="Your Favorite Football Team" multiple class="standardSelect" tabindex="5">
-                                    <option value=""></option>
-                                    <optgroup label="NFC EAST">
-                                        <option>Dallas Cowboys</option>
-                                        <option>New York Giants</option>
-                                        <option>Philadelphia Eagles</option>
-                                        <option>Washington Redskins</option>
-                                    </optgroup>
-                                    <optgroup label="NFC NORTH">
-                                        <option>Chicago Bears</option>
-                                        <option>Detroit Lions</option>
-                                        <option>Green Bay Packers</option>
-                                        <option>Minnesota Vikings</option>
-                                    </optgroup>
-                                    <optgroup label="NFC SOUTH">
-                                        <option>Atlanta Falcons</option>
-                                        <option>Carolina Panthers</option>
-                                        <option>New Orleans Saints</option>
-                                        <option>Tampa Bay Buccaneers</option>
-                                    </optgroup>
-                                    <optgroup label="NFC WEST">
-                                        <option>Arizona Cardinals</option>
-                                        <option>St. Louis Rams</option>
-                                        <option>San Francisco 49ers</option>
-                                        <option>Seattle Seahawks</option>
-                                    </optgroup>
-                                    <optgroup label="AFC EAST">
-                                        <option>Buffalo Bills</option>
-                                        <option>Miami Dolphins</option>
-                                        <option>New England Patriots</option>
-                                        <option>New York Jets</option>
-                                    </optgroup>
-                                    <optgroup label="AFC NORTH">
-                                        <option>Baltimore Ravens</option>
-                                        <option>Cincinnati Bengals</option>
-                                        <option>Cleveland Browns</option>
-                                        <option>Pittsburgh Steelers</option>
-                                    </optgroup>
-                                    <optgroup label="AFC SOUTH">
-                                        <option>Houston Texans</option>
-                                        <option>Indianapolis Colts</option>
-                                        <option>Jacksonville Jaguars</option>
-                                        <option>Tennessee Titans</option>
-                                    </optgroup>
-                                    <optgroup label="AFC WEST">
-                                        <option>Denver Broncos</option>
-                                        <option>Kansas City Chiefs</option>
-                                        <option>Oakland Raiders</option>
-                                        <option>San Diego Chargers</option>
-                                    </optgroup>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- .animated -->
-        </div><!-- .content -->
-
-    </div><!-- /#right-panel -->
-
-    <!-- Right Panel -->
+                </div><!-- .animated -->
+            </div><!-- .content -->
+        </div><!-- /#right-panel -->
+        <!-- Right Panel -->
 
 
-<script src="vendors/jquery/dist/jquery.min.js"></script>
-<script src="vendors/popper.js/dist/umd/popper.min.js"></script>
-<script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="assets/js/main.js"></script>
-<script src="vendors/chosen/chosen.jquery.min.js"></script>
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
 
-<script>
-    jQuery(document).ready(function() {
-        jQuery(".standardSelect").chosen({
-            disable_search_threshold: 10,
-            no_results_text: "Oops, nothing found!",
-            width: "100%"
-        });
-    });
-</script>
+    <script src="vendors/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="vendors/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
 
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
-
 </html>

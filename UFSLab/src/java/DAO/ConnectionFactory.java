@@ -19,9 +19,9 @@ public class ConnectionFactory {
   
   public static Connection getConnection() throws DAOException {
     try {
-            Class.forName("org.postgresql.Driver").newInstance();
-            String connection="jdbc:postgresql://localhost:5432/ihc";
-            String user="postgres", password="admin";
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            String connection="jdbc:mysql://localhost/ihc";
+            String user="root", password="";
 
             Connection conn = DriverManager.getConnection(connection, user, password);
             return conn;

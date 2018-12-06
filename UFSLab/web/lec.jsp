@@ -5,7 +5,9 @@
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="en">
 <!--<![endif]-->
-
+<%@page import="javax.servlet.http.HttpSession"%>
+<%@page import="Models.*"%>
+<%session.setAtribute("sala", 'lec') %>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -50,20 +52,20 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <a href="dashboard.jsp"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <h3 class="menu-title"><i class="menu-icon fa fa-flask"></i> Laboratórios</h3><!-- /.menu-title -->
                     <li>
-                        <a href="widgets.html"> <i class="menu-icon fa fa-laptop"></i>LEC - Sala 107 </a>
+                        <a href="lec.jsp"> <i class="menu-icon fa fa-laptop"></i>LEC - Sala 107 </a>
                     </li>
                     <li>
-                        <a href="widgets.html"> <i class="menu-icon fa fa-code"></i>LSO - Sala 109 </a>
+                        <a href="lso.jsp"> <i class="menu-icon fa fa-code"></i>LSO - Sala 109 </a>
                     </li>
                     <li>
-                        <a href="widgets.html"> <i class="menu-icon fa fa-laptop"></i>LSA - Sala 110 </a>
+                        <a href="lsa.jsp"> <i class="menu-icon fa fa-laptop"></i>LSA - Sala 110 </a>
                     </li>
                     <li>
-                        <a href="widgets.html"> <i class="menu-icon fa fa-wifi"></i>LARS - Sala 111 </a>
+                        <a href="lars.jsp"> <i class="menu-icon fa fa-wifi"></i>LARS - Sala 111 </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -229,32 +231,32 @@
                 <div class="row lec-computers">
                     <!-- Esquerda -->
                     <div class="col-sm-1 offset-1">
-                            <a href="forms-basic.html?id=1">
+                            <a href="abrirchamado.jsp?id=1">
                                 <i class="pc-icon fa fa-laptop" type="submit"></i>
                             </a>
                             <i class="status-icon working fa fa-check-circle"></i> 
-                            <div class="id-icon">04</div> 
+                            <div class="id-icon">52</div> 
                     </div>
                     <div class="col-sm-1">
-                        <a href="forms-basic.html?id=2">
+                        <a href="forms-basic.jsp?id=2">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a>
                         <i class="status-icon repair fa fa-exclamation-circle"></i>
-                        <div class="id-icon">03</div>    
+                        <div class="id-icon">51</div>    
                     </div>
                     <div class="col-sm-1">
-                        <a href="forms-basic.html?id=3">
+                        <a href="forms-basic.jsp?id=3">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a>
                         <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">02</div>   
+                        <div class="id-icon">52</div>   
                     </div>
                     <div class="col-sm-1">
-                        <a href="forms-basic.html?id=4">
+                        <a href="forms-basic.jsp?id=4">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a>
                         <i class="status-icon working fa fa-check-circle"></i> 
-                        <div class="id-icon">01</div>    
+                        <div class="id-icon">53</div>    
                     </div>
                     <!-- Direita -->
                     <!-- AUSENTE -->
@@ -264,366 +266,319 @@
                 <div class="row lec-computers">
                     <!-- Esquerda -->
                     <div class="col-sm-1 offset-1">
-                        <a href="forms-basic.html?id=5">
+                        <a href="forms-basic.jsp?id=5">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a>
                         <i class="status-icon working fa fa-check-circle"></i> 
-                        <div class="id-icon">08</div>  
+                        <div class="id-icon"></div>  
                     </div>
                     <div class="col-sm-1">
-                        <a href="forms-basic.html?id=6">
+                        <a href="forms-basic.jsp?id=6">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a>
                         <i class="status-icon working fa fa-check-circle"></i>  
-                        <div class="id-icon">07</div>   
                     </div>
                     <div class="col-sm-1">
-                        <a href="forms-basic.html?id=7">
+                        <a href="forms-basic.jsp?id=7">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a>
-                        <i class="status-icon repair fa fa-exclamation-circle"></i>
-                        <div class="id-icon">06</div>     
+                        <i class="status-icon repair fa fa-exclamation-circle"></i>    
                     </div>
                     <div class="col-sm-1">
-                        <a href="forms-basic.html?id=8">
+                        <a href="forms-basic.jsp?id=8">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a> 
-                        <i class="status-icon repair fa fa-exclamation-circle"></i> 
-                        <div class="id-icon">05</div>   
+                        <i class="status-icon repair fa fa-exclamation-circle"></i>   
                     </div>
                     <!-- Direita -->
                     <div class="col-sm-1 offset-2">
-                        <a href="forms-basic.html?id=9">
+                        <a href="forms-basic.jsp?id=9">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a> 
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">30</div>  
+                        <i class="status-icon working fa fa-check-circle"></i> 
                     </div>
                     <div class="col-sm-1">
-                        <a href="forms-basic.html?id=10">
+                        <a href="forms-basic.jsp?id=10">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a> 
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">29</div>  
+                        <i class="status-icon working fa fa-check-circle"></i> 
                     </div>
                     <div class="col-sm-1">
-                        <a href="forms-basic.html?id=11">
+                        <a href="forms-basic.jsp?id=11">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a> 
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">31</div>  
+                        <i class="status-icon working fa fa-check-circle"></i> 
                     </div>
                     <div class="col-sm-1">
-                        <a href="forms-basic.html?id=12">
+                        <a href="forms-basic.jsp?id=12">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a>
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">32</div>  
+                        <i class="status-icon working fa fa-check-circle"></i> 
                     </div>
                 </div>
                 <!-- 3ª FILA -->
                 <div class="row lec-computers">
                     <!-- Esquerda -->
                     <div class="col-sm-1 offset-1">
-                        <a href="forms-basic.html?id=13">
+                        <a href="forms-basic.jsp?id=13">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a>
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">12</div>  
+                        <i class="status-icon working fa fa-check-circle"></i> 
                     </div>
                     <div class="col-sm-1">
-                        <a href="forms-basic.html?id=14">
+                        <a href="forms-basic.jsp?id=14">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a>
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">11</div>   
+                        <i class="status-icon working fa fa-check-circle"></i>  
                     </div>
                     <div class="col-sm-1">
-                        <a href="forms-basic.html?id=15">
+                        <a href="forms-basic.jsp?id=15">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a>
-                        <i class="status-icon repair fa fa-exclamation-circle"></i> 
-                        <div class="id-icon">10</div>    
+                        <i class="status-icon repair fa fa-exclamation-circle"></i>    
                     </div>
                     <div class="col-sm-1">
-                        <a href="forms-basic.html?id=16">
+                        <a href="forms-basic.jsp?id=16">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a> 
-                        <i class="status-icon repair fa fa-exclamation-circle"></i>
-                        <div class="id-icon">39</div>    
+                        <i class="status-icon repair fa fa-exclamation-circle"></i>   
                     </div>
                     <!-- Direita -->
                     <div class="col-sm-1 offset-2">
-                        <a href="forms-basic.html?id=17">
+                        <a href="forms-basic.jsp?id=17">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a> 
                         <i class="status-icon working fa fa-check-circle"></i> 
-                        <div class="id-icon">34</div> 
                     </div>
                     <div class="col-sm-1">
-                        <a href="forms-basic.html?id=18">
+                        <a href="forms-basic.jsp?id=18">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a> 
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">33</div>  
+                        <i class="status-icon working fa fa-check-circle"></i> 
                     </div>
                     <div class="col-sm-1">
-                        <a href="forms-basic.html?id=19">
+                        <a href="forms-basic.jsp?id=19">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a> 
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">35</div>  
+                        <i class="status-icon working fa fa-check-circle"></i> 
                     </div>
                     <div class="col-sm-1">
-                        <a href="forms-basic.html?id=20">
+                        <a href="forms-basic.jsp?id=20">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a>
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">36</div>  
+                        <i class="status-icon working fa fa-check-circle"></i> 
                     </div>
                 </div>
                 <!-- 4ª FILA -->
                 <div class="row lec-computers">
                     <!-- Esquerda -->
                     <div class="col-sm-1 offset-1">
-                        <a href="forms-basic.html?id=17">
-                            <i class="pc-icon fa fa-laptop" type="submit"></i>
-                        </a> 
-                        <i class="status-icon working fa fa-check-circle"></i> 
-                        <div class="id-icon">16</div> 
-                    </div>
-                    <div class="col-sm-1">
-                        <a href="forms-basic.html?id=18">
-                            <i class="pc-icon fa fa-laptop" type="submit"></i>
-                        </a> 
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">15</div>  
-                    </div>
-                    <div class="col-sm-1">
-                        <a href="forms-basic.html?id=19">
-                            <i class="pc-icon fa fa-laptop" type="submit"></i>
-                        </a> 
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">14</div>  
-                    </div>
-                    <div class="col-sm-1">
-                        <a href="forms-basic.html?id=20">
+                        <a href="forms-basic.jsp?id=21">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a>
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">13</div>  
+                        <i class="status-icon working fa fa-check-circle"></i> 
+                    </div>
+                    <div class="col-sm-1">
+                        <a href="forms-basic.jsp?id=22">
+                            <i class="pc-icon fa fa-laptop" type="submit"></i>
+                        </a>
+                        <i class="status-icon working fa fa-check-circle"></i>  
+                    </div>
+                    <div class="col-sm-1">
+                        <a href="forms-basic.jsp?id=23">
+                            <i class="pc-icon fa fa-laptop" type="submit"></i>
+                        </a>
+                        <i class="status-icon repair fa fa-exclamation-circle"></i>    
+                    </div>
+                    <div class="col-sm-1">
+                        <a href="forms-basic.jsp?id=24">
+                            <i class="pc-icon fa fa-laptop" type="submit"></i>
+                        </a> 
+                        <i class="status-icon repair fa fa-exclamation-circle"></i>   
                     </div>
                     <!-- Direita -->
-                   <!-- Direita -->
                     <div class="col-sm-1 offset-2">
-                        <a href="forms-basic.html?id=17">
+                        <a href="forms-basic.jsp?id=25">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a> 
                         <i class="status-icon working fa fa-check-circle"></i> 
-                        <div class="id-icon">09</div> 
                     </div>
                     <div class="col-sm-1">
-                        <a href="forms-basic.html?id=18">
+                        <a href="forms-basic.jsp?id=26">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a> 
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">37</div>  
+                        <i class="status-icon working fa fa-check-circle"></i> 
                     </div>
                     <div class="col-sm-1">
-                        <a href="forms-basic.html?id=19">
+                        <a href="forms-basic.jsp?id=27">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a> 
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">38</div>  
+                        <i class="status-icon working fa fa-check-circle"></i> 
                     </div>
                     <div class="col-sm-1">
-                        <a href="forms-basic.html?id=20">
+                        <a href="forms-basic.jsp?id=28">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a>
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">40</div>  
+                        <i class="status-icon working fa fa-check-circle"></i> 
                     </div>
                 </div>
                 <!-- 5ª FILA -->
                 <div class="row lec-computers">
+                    <!-- Esquerda -->
                     <div class="col-sm-1 offset-1">
-                        <a href="forms-basic.html?id=17">
-                            <i class="pc-icon fa fa-laptop" type="submit"></i>
-                        </a> 
-                        <i class="status-icon working fa fa-check-circle"></i> 
-                        <div class="id-icon">20</div> 
-                    </div>
-                    <div class="col-sm-1">
-                        <a href="forms-basic.html?id=18">
-                            <i class="pc-icon fa fa-laptop" type="submit"></i>
-                        </a> 
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">19</div>  
-                    </div>
-                    <div class="col-sm-1">
-                        <a href="forms-basic.html?id=19">
-                            <i class="pc-icon fa fa-laptop" type="submit"></i>
-                        </a> 
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">18</div>  
-                    </div>
-                    <div class="col-sm-1">
-                        <a href="forms-basic.html?id=20">
+                        <a href="forms-basic.jsp?id=29">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a>
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">17</div>  
+                        <i class="status-icon working fa fa-check-circle"></i> 
+                    </div>
+                    <div class="col-sm-1">
+                        <a href="forms-basic.jsp?id=30">
+                            <i class="pc-icon fa fa-laptop" type="submit"></i>
+                        </a>
+                        <i class="status-icon working fa fa-check-circle"></i>  
+                    </div>
+                    <div class="col-sm-1">
+                        <a href="forms-basic.jsp?id=31">
+                            <i class="pc-icon fa fa-laptop" type="submit"></i>
+                        </a>
+                        <i class="status-icon repair fa fa-exclamation-circle"></i>    
+                    </div>
+                    <div class="col-sm-1">
+                        <a href="forms-basic.jsp?id=32">
+                            <i class="pc-icon fa fa-laptop" type="submit"></i>
+                        </a> 
+                        <i class="status-icon repair fa fa-exclamation-circle"></i>   
                     </div>
                     <!-- Direita -->
                     <div class="col-sm-1 offset-2">
-                        <a href="forms-basic.html?id=25">
+                        <a href="forms-basic.jsp?id=33">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a> 
                         <i class="status-icon working fa fa-check-circle"></i> 
-                        <div class="id-icon"><i class="fa fa-exclamation-triangle"></i></div>  
                     </div>
                     <div class="col-sm-1">
-                        <a href="forms-basic.html?id=26">
+                        <a href="forms-basic.jsp?id=34">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a> 
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">43</div>   
+                        <i class="status-icon working fa fa-check-circle"></i> 
                     </div>
                     <div class="col-sm-1">
-                        <a href="forms-basic.html?id=27">
+                        <a href="forms-basic.jsp?id=35">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a> 
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">42</div>  
+                        <i class="status-icon working fa fa-check-circle"></i> 
                     </div>
                     <div class="col-sm-1">
-                        <a href="forms-basic.html?id=28">
+                        <a href="forms-basic.jsp?id=36">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a>
                         <i class="status-icon working fa fa-check-circle"></i> 
-                        <div class="id-icon">44</div> 
                     </div>
                 </div>
                 <!-- 6ª FILA -->
                 <div class="row lec-computers">
                     <!-- Esquerda -->
                     <div class="col-sm-1 offset-1">
-                        <a href="forms-basic.html?id=17">
-                            <i class="pc-icon fa fa-laptop" type="submit"></i>
-                        </a> 
-                        <i class="status-icon working fa fa-check-circle"></i> 
-                        <div class="id-icon">24</div> 
-                    </div>
-                    <div class="col-sm-1">
-                        <a href="forms-basic.html?id=18">
-                            <i class="pc-icon fa fa-laptop" type="submit"></i>
-                        </a> 
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">23</div>  
-                    </div>
-                    <div class="col-sm-1">
-                        <a href="forms-basic.html?id=19">
-                            <i class="pc-icon fa fa-laptop" type="submit"></i>
-                        </a> 
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">22</div>  
-                    </div>
-                    <div class="col-sm-1">
-                        <a href="forms-basic.html?id=20">
+                        <a href="forms-basic.jsp?id=37">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a>
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">21</div>  
+                        <i class="status-icon working fa fa-check-circle"></i> 
+                    </div>
+                    <div class="col-sm-1">
+                        <a href="forms-basic.jsp?id=38">
+                            <i class="pc-icon fa fa-laptop" type="submit"></i>
+                        </a>
+                        <i class="status-icon working fa fa-check-circle"></i>  
+                    </div>
+                    <div class="col-sm-1">
+                        <a href="forms-basic.jsp?id=39">
+                            <i class="pc-icon fa fa-laptop" type="submit"></i>
+                        </a>
+                        <i class="status-icon repair fa fa-exclamation-circle"></i>    
+                    </div>
+                    <div class="col-sm-1">
+                        <a href="forms-basic.jsp?id=40">
+                            <i class="pc-icon fa fa-laptop" type="submit"></i>
+                        </a> 
+                        <i class="status-icon repair fa fa-exclamation-circle"></i>   
                     </div>
                     <!-- Direita -->
                     <div class="col-sm-1 offset-2">
-                        <a href="forms-basic.html?id=41">
+                        <a href="forms-basic.jsp?id=41">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a> 
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">41</div>  
+                        <i class="status-icon working fa fa-check-circle"></i> 
                     </div>
                     <div class="col-sm-1">
-                        <a href="forms-basic.html?id=42">
+                        <a href="forms-basic.jsp?id=42">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a> 
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">47</div>  
+                        <i class="status-icon working fa fa-check-circle"></i> 
                     </div>
                     <div class="col-sm-1">
-                        <a href="forms-basic.html?id=43">
+                        <a href="forms-basic.jsp?id=43">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a> 
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">46</div> 
+                        <i class="status-icon working fa fa-check-circle"></i> 
                     </div>
                     <div class="col-sm-1">
-                        <a href="forms-basic.html?id=44">
+                        <a href="forms-basic.jsp?id=44">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a>
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">45</div>  
+                        <i class="status-icon working fa fa-check-circle"></i> 
                     </div>
                 </div>
                 <!-- 7ª FILA -->
                 <div class="row lec-computers">
                     <!-- Esquerda -->
                     <div class="col-sm-1 offset-1">
-                        <a href="forms-basic.html?id=17">
-                            <i class="pc-icon fa fa-laptop" type="submit"></i>
-                        </a> 
-                        <i class="status-icon working fa fa-check-circle"></i> 
-                        <div class="id-icon">28</div> 
-                    </div>
-                    <div class="col-sm-1">
-                        <a href="forms-basic.html?id=18">
-                            <i class="pc-icon fa fa-laptop" type="submit"></i>
-                        </a> 
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">27</div>  
-                    </div>
-                    <div class="col-sm-1">
-                        <a href="forms-basic.html?id=19">
-                            <i class="pc-icon fa fa-laptop" type="submit"></i>
-                        </a> 
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">26</div>  
-                    </div>
-                    <div class="col-sm-1">
-                        <a href="forms-basic.html?id=20">
+                        <a href="forms-basic.jsp?id=45">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a>
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">25</div>  
+                        <i class="status-icon working fa fa-check-circle"></i> 
+                    </div>
+                    <div class="col-sm-1">
+                        <a href="forms-basic.jsp?id=46">
+                            <i class="pc-icon fa fa-laptop" type="submit"></i>
+                        </a>
+                        <i class="status-icon working fa fa-check-circle"></i>  
+                    </div>
+                    <div class="col-sm-1">
+                        <a href="forms-basic.jsp?id=47">
+                            <i class="pc-icon fa fa-laptop" type="submit"></i>
+                        </a>
+                        <i class="status-icon repair fa fa-exclamation-circle"></i>    
+                    </div>
+                    <div class="col-sm-1">
+                        <a href="forms-basic.jsp?id=48">
+                            <i class="pc-icon fa fa-laptop" type="submit"></i>
+                        </a> 
+                        <i class="status-icon repair fa fa-exclamation-circle"></i>   
                     </div>
                     <!-- Direita -->
                     <div class="col-sm-1 offset-2">
-                        <a href="forms-basic.html?id=49">
-                            <i class="pc-icon fa fa-laptop" type="submit"></i>
-                        </a> 
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">49</div>  
-                    </div>
-                    <div class="col-sm-1">
-                        <a href="forms-basic.html?id=50">
-                            <i class="pc-icon fa fa-laptop" type="submit"></i>
-                        </a> 
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">52</div> 
-                    </div>
-                    <div class="col-sm-1">
-                        <a href="forms-basic.html?id=51">
+                        <a href="forms-basic.jsp?id=49">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a> 
                         <i class="status-icon working fa fa-check-circle"></i> 
-                        <div class="id-icon">51</div> 
                     </div>
                     <div class="col-sm-1">
-                        <a href="forms-basic.html?id=52">
+                        <a href="forms-basic.jsp?id=50">
+                            <i class="pc-icon fa fa-laptop" type="submit"></i>
+                        </a> 
+                        <i class="status-icon working fa fa-check-circle"></i> 
+                    </div>
+                    <div class="col-sm-1">
+                        <a href="forms-basic.jsp?id=51">
+                            <i class="pc-icon fa fa-laptop" type="submit"></i>
+                        </a> 
+                        <i class="status-icon working fa fa-check-circle"></i> 
+                    </div>
+                    <div class="col-sm-1">
+                        <a href="forms-basic.jsp?id=52">
                             <i class="pc-icon fa fa-laptop" type="submit"></i>
                         </a>
-                        <i class="status-icon working fa fa-check-circle"></i>
-                        <div class="id-icon">50</div>  
+                        <i class="status-icon working fa fa-check-circle"></i> 
                     </div>
                 </div>
             </div>
