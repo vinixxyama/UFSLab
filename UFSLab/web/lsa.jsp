@@ -229,27 +229,31 @@
         </div>
 
         <div class="content mt-3">
-            <!-- 1ª Linha -->
-            <div class="row lsa-computer">
+           <!-- 1ª Linha -->
+           <div class="row lsa-computer">
                 <!-- Esquerda-Canto -->
                 <div class="col-sm-1">
-                    <a href="forms-basic.jsp?id=80"><i class="pc-icon fa fa-laptop"></i></a>
+                    <a href="forms-basic.jsp?id=12"><i class="pc-icon fa fa-laptop"></i></a>
                     <i class="status-icon working fa fa-check-circle"></i>
+                    <div class="id-icon">12</div>
                 </div>
                 <!-- Esquerda-Meio -->
                 <div class="col-sm-1 offset-4 mid-left">
-                    <a href="forms-basic.jsp?id=81"><i class="pc-icon fa fa-laptop"></i></a>
+                    <a href="forms-basic.jsp?id=07"><i class="pc-icon fa fa-laptop"></i></a>
                     <i class="status-icon working fa fa-check-circle"></i>
+                    <div class="id-icon">07</div>
                 </div>
                 <!-- DIreita-Meio -->
                 <div class="col-sm-1 mid-right">
-                    <a href="forms-basic.jsp?id=82"><i class="pc-icon fa fa-laptop"></i></a>
+                    <a href="forms-basic.jsp?id=06"><i class="pc-icon fa fa-laptop"></i></a>
                     <i class="status-icon working fa fa-check-circle"></i>
+                    <div class="id-icon">06</div>
                 </div>
                 <!-- Direita-Canto -->
                 <div class="col-sm-1 offset-4">
-                    <a href="forms-basic.jsp?id=83"><i class="pc-icon fa fa-laptop"></i></a>
+                    <a href="forms-basic.jsp?id=01"><i class="pc-icon fa fa-laptop"></i></a> 
                     <i class="status-icon working fa fa-check-circle"></i>
+                    <div class="id-icon">01</div>
                 </div>
             </div>
 
@@ -257,46 +261,54 @@
             <div class="row lsa-computer">
                 <!-- Esquerda-Canto -->
                 <div class="col-sm-1">
-                    <a href="forms-basic.jsp?id=84"><i class="pc-icon fa fa-laptop"></i></a>
+                    <a href="forms-basic.jsp?id=11"><i class="pc-icon fa fa-laptop"></i></a>
                     <i class="status-icon working fa fa-check-circle"></i>
+                    <div class="id-icon">11</div>
                 </div>
                 <!-- Esquerda-Meio -->
                 <div class="col-sm-1 offset-4 mid-left">
-                    <a href="forms-basic.jsp?id=85"><i class="pc-icon fa fa-laptop"></i></a>
+                    <a href="forms-basic.jsp?id=08"><i class="pc-icon fa fa-laptop"></i></a>
                     <i class="status-icon working fa fa-check-circle"></i>
+                    <div class="id-icon">08</div>
                 </div>
                 <!-- DIreita-Meio -->
                 <div class="col-sm-1 mid-right">
-                    <a href="forms-basic.jsp?id=86"><i class="pc-icon fa fa-laptop"></i></a>
+                    <a href="forms-basic.jsp?id=05"><i class="pc-icon fa fa-laptop"></i></a>
                     <i class="status-icon working fa fa-check-circle"></i>
+                    <div class="id-icon">05</div>
                 </div>
                 <!-- Direita-Canto -->
                 <div class="col-sm-1 offset-4">
-                    <a href="forms-basic.jsp?id=87"><i class="pc-icon fa fa-laptop"></i></a>
+                    <a href="forms-basic.jsp?id=02"><i class="pc-icon fa fa-laptop"></i></a>
                     <i class="status-icon working fa fa-check-circle"></i> 
+                    <div class="id-icon">02</div>
                 </div>
             </div>
             <!-- 3ª Linha -->
             <div class="row lsa-computer">
                 <!-- Esquerda-Canto -->
                 <div class="col-sm-1">
-                    <a href="forms-basic.jsp?id=88"><i class="pc-icon fa fa-laptop"></i></a>
+                    <a href="forms-basic.jsp?id=10"><i class="pc-icon fa fa-laptop"></i></a>
                     <i class="status-icon working fa fa-check-circle"></i>
+                    <div class="id-icon">10</div>
                 </div>
                 <!-- Esquerda-Meio -->
                 <div class="col-sm-1 offset-4 mid-left">
-                    <a href="forms-basic.jsp?id=89"><i class="pc-icon fa fa-laptop"></i></a>
+                    <a href="forms-basic.jsp?id=09"><i class="pc-icon fa fa-laptop"></i></a>
                     <i class="status-icon working fa fa-check-circle"></i>
+                    <div class="id-icon">09</div>
                 </div>
                 <!-- DIreita-Meio -->
                 <div class="col-sm-1 mid-right">
-                    <a href="forms-basic.jsp?id=90"><i class="pc-icon fa fa-laptop"></i></a>
+                    <a href="forms-basic.jsp?id=04"><i class="pc-icon fa fa-laptop"></i></a>
                     <i class="status-icon working fa fa-check-circle"></i>
+                    <div class="id-icon">04</div>
                 </div>
                 <!-- Direita-Canto -->
                 <div class="col-sm-1 offset-4">
-                    <a href="forms-basic.jsp?id=91"><i class="pc-icon fa fa-laptop"></i></a>
+                    <a href="forms-basic.jsp?id=03"><i class="pc-icon fa fa-laptop"></i></a>
                     <i class="status-icon working fa fa-check-circle"></i>
+                    <div class="id-icon">03</div>
                 </div>
             </div>
         </div> <!-- .content -->
