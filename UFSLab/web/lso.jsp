@@ -5,10 +5,9 @@
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="en">
 <!--<![endif]-->
-<%@page import="javax.servlet.http.HttpSession"%>
-<%@page import="Models.*"%>
-<%session.setAtribute("sala", 'lso') %>
-
+<script>
+      localStorage.setItem("sala", "lso");
+</script>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,7 +32,9 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
 </head>
-
+<script>
+    localStorage.setItem("sala","lso");
+</script>
 <body>
 
 
@@ -57,16 +58,16 @@
                     </li>
                     <h3 class="menu-title"><i class="menu-icon fa fa-flask"></i> Laboratórios</h3><!-- /.menu-title -->
                     <li>
-                        <a href="widgets.html"> <i class="menu-icon fa fa-laptop"></i>LEC - Sala 107 </a>
+                        <a href="lec.jsp"> <i class="menu-icon fa fa-laptop"></i>LEC - Sala 107 </a>
                     </li>
                     <li>
-                        <a href="widgets.html"> <i class="menu-icon fa fa-code"></i>LSO - Sala 109 </a>
+                        <a href="lso.jsp"> <i class="menu-icon fa fa-code"></i>LSO - Sala 109 </a>
                     </li>
                     <li>
-                        <a href="widgets.html"> <i class="menu-icon fa fa-laptop"></i>LSA - Sala 110 </a>
+                        <a href="lsa.jsp"> <i class="menu-icon fa fa-laptop"></i>LSA - Sala 110 </a>
                     </li>
                     <li>
-                        <a href="widgets.html"> <i class="menu-icon fa fa-wifi"></i>LARS - Sala 111 </a>
+                        <a href="lars.jsp"> <i class="menu-icon fa fa-wifi"></i>LARS - Sala 111 </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->

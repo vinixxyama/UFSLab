@@ -39,13 +39,9 @@ public class Entrar extends HttpServlet {
         UserDAO user;
         try {
             user = new UserDAO();
-            String name = user.login(password);
-            if (username.equals(name) && !username.isEmpty()) {
+            User usuario = user.login(password);
+            if (username.equals(usuario.getEmail()) && !username.isEmpty()) {
                 HttpSession session = request.getSession(false);
-                User usuario = new User();
-                usuario.setEmail(username);
-                usuario.setNome(name);
-                usuario.setPassword(password);
                 session.setAttribute("user", usuario);
                 RequestDispatcher d = request.getRequestDispatcher("/dashboard.jsp");
                 //Logger.getLogger(Registrar.class.getName()).log(Level.SEVERE, d.toString());

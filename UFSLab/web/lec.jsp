@@ -5,9 +5,9 @@
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="en">
 <!--<![endif]-->
-<%@page import="javax.servlet.http.HttpSession"%>
-<%@page import="Models.*"%>
-<%session.setAtribute("sala", 'lec') %>
+<script>
+      localStorage.setItem("sala", "lec");
+</script>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,7 +32,9 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
 </head>
-
+<script>
+    localStorage.setItem("sala","lec");
+</script>
 <body>
 
 

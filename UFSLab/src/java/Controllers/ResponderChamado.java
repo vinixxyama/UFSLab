@@ -5,22 +5,22 @@
  */
 package Controllers;
 
+import DAO.*;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.http.*;
-import Models.*;
-import DAO.*;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  *
  * @author gabriel
  */
-public class AbrirChamado extends HttpServlet {
+public class ResponderChamado extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,10 +39,10 @@ public class AbrirChamado extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Chamado</title>");
+            out.println("<title>Servlet ResponderChamado</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Chamado at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet ResponderChamado at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -60,8 +60,14 @@ public class AbrirChamado extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
-
+        try {
+            String id = request.getParameter("id");
+            ChamadoDAO ch = new ChamadoDAO();
+            ch.fecharChamado(Integer.parseInt(id));
+        } catch (DAOException | SQLException ex) {
+            Logger.getLogger(ResponderChamado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
     }
 
     /**
@@ -75,33 +81,7 @@ public class AbrirChamado extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        Logger.getLogger(AbrirChamado.class.getName()).log(Level.INFO, "request={0}", request.toString());
-        User user = (User) session.getAttribute("user");
-        Logger.getLogger(AbrirChamado.class.getName()).log(Level.INFO, "user={0}", user.getNome());
-        String pcId = request.getHeader("id");
-        String sala = request.getHeader("sala");
-        String descricao = request.getHeader("descricao");
-        Logger.getLogger(AbrirChamado.class.getName()).log(Level.INFO, "pcId={0}", pcId);
-        Logger.getLogger(AbrirChamado.class.getName()).log(Level.INFO, "sala={0}", sala);
-        //HttpSession session = request.getSession(false);
-        Chamado chamado = new Chamado();
-        try {
-            ChamadoDAO cham = new ChamadoDAO();
-            chamado.setPcId(pcId);
-            chamado.setDescricao(descricao);
-            chamado.setRa(user.getRA());
-            chamado.setTecnicoId("12345");
-            chamado.setSala(sala);
-            cham.criarChamado(chamado);
-            PCDAO pcDAO = new PCDAO();
-            pcDAO.atualizarStatus(pcId, '1');
-            //       RequestDispatcher d = request.getRequestDispatcher("");
-            //      d.forward(request, response);    
-        } catch (DAOException | SQLException ex) {
-            Logger.getLogger(AbrirChamado.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+        processRequest(request, response); 
     }
 
     /**

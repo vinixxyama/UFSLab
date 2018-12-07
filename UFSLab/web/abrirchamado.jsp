@@ -287,15 +287,30 @@
                                     <strong>Abrir Chamado</strong>
                                 </div>
                                 <div class="card-body card-block">
-                                    <form action="AbrirChamado" method="GET" class="form-horizontal">
-                                        <div class="row form-group">
-                                            <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Descrição</label></div>
-                                            <div class="col-12 col-md-9"><textarea name="descricao" id="textarea-input" rows="9" placeholder="Descreva o problema que encontrou neste computador" class="form-control"></textarea></div>
-                                        </div>  
-                                        <button type="submit" class="btn btn-primary btn-sm">
-                                            <i class="fa fa-dot-circle-o"></i> Enviar
-                                        </button>
-                                    </form>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Descrição</label></div>
+                                        <div class="col-12 col-md-9"><textarea name="descricao" id="descricao" rows="9" placeholder="Descreva o problema que encontrou neste computador" class="form-control"></textarea></div>
+                                    </div>  
+                                    <script>
+                                        function loadDoc() {
+                                            var xhttp = new XMLHttpRequest();
+                                            xhttp.onreadystatechange = function () {
+                                                sala = localStorage.getItem("sala");
+                                                id = window.location.href;
+                                                descricao = document.getElementById(descricao).value;
+                                            };
+                                            xhttp.open("POST", "AbrirChamado", true);
+                                            xhttp.setRequestHeader("sala",sala);
+                                            xhttp.setRequestHeader("id",id);
+                                            xhttp.setRequestHeader("descricao",descricao);
+                                            xhttp.send();
+                                        }
+                                    </script>
+                                    <button type="button" class="btn btn-primary btn-sm" onclick="loadDoc()">
+                                        <i class="fa fa-dot-circle-o"></i> Enviar
+                                    </button>
+
                                 </div>
                                 <div class="card-footer">
                                     <button type="reset" class="btn btn-danger btn-sm">

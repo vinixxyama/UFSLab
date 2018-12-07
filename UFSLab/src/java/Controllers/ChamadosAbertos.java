@@ -19,7 +19,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import javax.servlet.http.HttpSession;
 /**
  *
  * @author gabriel
@@ -67,6 +67,8 @@ public class ChamadosAbertos extends HttpServlet {
         try {
             //processRequest(request, response);
             String pcId = request.getRequestURL().toString();
+            HttpSession session = request.getSession();
+            String sala = (String) session.getAttribute("sala");
             ChamadoDAO cDAO = new ChamadoDAO();
             ArrayList<Chamado> c_list = cDAO.mostrarChamados(pcId);
             request.setAttribute("c_list", c_list);

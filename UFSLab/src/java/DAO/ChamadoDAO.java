@@ -48,4 +48,13 @@ public class ChamadoDAO {
         }
         return chamados;
     }
+    
+    public void fecharChamado(int id) throws SQLException{
+        PreparedStatement stmt;
+        int r; // will store the query's result
+        String SQL;
+        SQL = "DELETE FROM chamado WHERE id = '" + id + "';";
+        stmt = connection.prepareStatement(SQL);
+        r = stmt.executeUpdate();
+    }
 }

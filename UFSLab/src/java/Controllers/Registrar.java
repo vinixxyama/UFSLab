@@ -71,7 +71,7 @@ public class Registrar extends HttpServlet {
             usuario.setEmail(request.getParameter("email"));
             UserDAO usuarioDAO = new UserDAO();
             usuarioDAO.registrar(usuario);
-           HttpSession session = request.getSession(false);
+            HttpSession session = request.getSession(false);
             session.setAttribute("user", usuario);
             
             RequestDispatcher d = request.getRequestDispatcher("/dashboard.jsp");

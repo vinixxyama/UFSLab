@@ -16,12 +16,12 @@ public class UserDAO {
         this.connection = ConnectionFactory.getConnection();
     }
 
-    public String login(String password) throws SQLException {
-        String email = null;
+    public User login(String password) throws SQLException {
+        User usuario = new User();
         PreparedStatement stmt;
         ResultSet r = null; // will store the query's result
         String SQL;
-        SQL = "SELECT email from usuario "
+        SQL = "SELECT * from usuario "
                 + "WHERE senha = '" + password + "';";
         stmt = connection.prepareStatement(SQL);
         //Logger.getLogger(UserDAO.class.getName()).log(Level.INFO, stmt.toString());
@@ -29,10 +29,13 @@ public class UserDAO {
         r = stmt.executeQuery();
         if (r.next()) {
     //        Logger.getLogger(UserDAO.class.getName()).log(Level.INFO, Integer.toString(r.getRow()));
-            email = r.getString("email");
+            usuario.setEmail(r.getString("email"));
+            usuario.setNome(r.getString("nome"));
+            usuario.setRA(r.getString("ra"));
+            usuario.setPassword(r.getString("senha"));
       //      Logger.getLogger(UserDAO.class.getName()).log(Level.INFO, email);
         }
-        return email;
+        return usuario;
     }
 
     public void registrar(User usuario) throws SQLException {
