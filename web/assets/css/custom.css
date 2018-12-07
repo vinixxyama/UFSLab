@@ -1,0 +1,176 @@
+/* GERAL */
+
+.pc-icon{
+    background-color: #aef0be;
+    border: 1px solid #91eea7;
+    color: #155724;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 30px;
+    margin-left: 4px;
+}
+
+
+.status-icon{
+    width: 12%; 
+    margin-top: 40%;
+    margin-left: -5%;
+    position: absolute;
+}
+
+.working{
+    color: #155724;
+}
+
+.repair{
+    color: #55141b;
+}
+
+.pc-icon:hover{
+    background-color: #6ce98b;
+}
+
+.danger{
+    background-color: #ff919a;
+    border: 1px solid #ff7a87;
+    color: #55141b;
+}
+
+.danger:hover{
+    background-color: #fd6572;
+}
+/* END GERAL */
+
+/* LEC */
+.lec-computers:first-child{
+    margin-top: 75px;
+}
+.lec-computers{
+    margin-bottom: 80px;
+}
+
+
+.lec-bg{
+    background-image: url("../../images/lec-bg.png");
+    background-repeat: no-repeat;
+    
+}
+
+/* END LEC */
+
+
+/* LARS */
+.lars-bg{
+    background-image: url("../../images/lars-bg.png");
+    background-repeat: no-repeat;
+    
+}
+
+.lars-computer:first-child{
+    margin-top: 110px;
+}
+.lars-computer:last-child{
+    margin-top: -10px;
+}
+
+.lars-computer{
+    margin-top: 2px;
+    margin-bottom: 85px;
+}
+
+.lars-computer .mid-left{
+    transform: translateX(40%);
+}
+
+.lars-computer .mid-right{
+    transform: translateX(-20%);
+    margin-right: 15px;
+}
+/* END LARS */
+
+/* LSO */
+.lso-bg{
+    background-image: url("../../images/lso-bg.png");
+    background-repeat: no-repeat;
+}
+
+.lso-computer{
+    margin-top: 80px;
+    margin-bottom: 82px;
+}
+
+.pc-right{
+    margin-left: 20%;
+}
+/* END LSO */
+
+/* LSA */
+.lsa-bg{
+    background-image: url("../../images/lsa-bg.png");
+    background-repeat: no-repeat;
+}
+
+.lsa-computer{
+    margin-top: 50px;
+    padding-left: 50px;
+    padding-right: 45px;
+    margin-bottom: 110px;
+}
+
+.lsa-computer .mid-left{
+    transform: translate(20%);
+}
+
+.lsa-computer .mid-right{
+    transform: translate(10%);
+}
+/*END LSA */
+
+
+/* INDEX */
+
+.title{
+    text-transform: uppercase;
+    color: rgb(65, 65, 65);
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.card:hover{
+    background-color: rgb(240, 240, 240);
+}
+
+.id-icon{
+    margin-top: -15%; 
+    margin-left: -5%;
+    color: #fff;
+    font-size: 10.5px;
+    position: absolute;
+    background-color: #272c33;
+    border-radius: 4px;
+    padding: 3px;
+}
+
+
+.chamado-desc{
+    width: 80%;
+}
+
+.chamado-class{
+    width: 10%;
+    text-align: center;
+}
+
+.chamado-tools{
+    width: 10%;
+    font-size: 18px;
+    text-align: center;
+}
+
+.chamado-tools .fa-wrench{
+    color: rgb(97, 97, 97);
+}
+
+.chamado-tools .fa-times{
+    color: rgb(209, 0, 0);
+}
