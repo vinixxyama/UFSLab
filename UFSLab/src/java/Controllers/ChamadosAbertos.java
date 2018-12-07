@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -69,7 +70,8 @@ public class ChamadosAbertos extends HttpServlet {
             ChamadoDAO cDAO = new ChamadoDAO();
             ArrayList<Chamado> c_list = cDAO.mostrarChamados(pcId);
             request.setAttribute("c_list", c_list);
-            
+            RequestDispatcher d = request.getRequestDispatcher("/chamados-abertos.jsp");
+            d.forward(request, response);
         } catch (DAOException | SQLException ex) {
             Logger.getLogger(ChamadosAbertos.class.getName()).log(Level.SEVERE, null, ex);
         }

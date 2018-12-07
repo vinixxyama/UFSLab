@@ -5,12 +5,14 @@
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="en">
 <!--<![endif]-->
-
+<%@page import="javax.servlet.http.HttpSession"%>
+<%@page import="Models.*"%>
+<%session.setAtribute("sala", 'lars') %>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>UFSLab - Dashboard</title>
-    <meta name="description" content="UFSLab - Dashboard">
+    <title>UFSLab - LARS</title>
+    <meta name="description" content="UFSLab - LARS">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-icon.png">
@@ -26,6 +28,7 @@
 
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/custom.css">
+
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
 </head>
@@ -53,16 +56,16 @@
                     </li>
                     <h3 class="menu-title"><i class="menu-icon fa fa-flask"></i> Laboratórios</h3><!-- /.menu-title -->
                     <li>
-                        <a href="lec.jsp"> <i class="menu-icon fa fa-laptop"></i>LEC - Sala 101 </a>
+                        <a href="lec.jsp"> <i class="menu-icon fa fa-laptop"></i>LEC - Sala 107 </a>
                     </li>
                     <li>
-                        <a href="lso.jsp"> <i class="menu-icon fa fa-code"></i>LSO - Sala 103 </a>
+                        <a href="lso.jsp"> <i class="menu-icon fa fa-code"></i>LSO - Sala 109 </a>
                     </li>
                     <li>
-                        <a href="lsa.jsp"> <i class="menu-icon fa fa-tasks"></i>LSA - Sala 104 </a>
+                        <a href="lsa.jsp"> <i class="menu-icon fa fa-laptop"></i>LSA - Sala 110 </a>
                     </li>
                     <li>
-                        <a href="lars.jsp"> <i class="menu-icon fa fa-wifi"></i>LARS - Sala 105 </a>
+                        <a href="lars.jsp"> <i class="menu-icon fa fa-wifi"></i>LARS - Sala 111 </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -73,7 +76,7 @@
 
     <!-- Right Panel -->
 
-    <div id="right-panel" class="right-panel">
+    <div id="right-panel" class="right-panel lars-bg">
 
         <!-- Header-->
         <header id="header" class="header">
@@ -201,3 +204,173 @@
 
         </header><!-- /header -->
         <!-- Header-->
+
+        <div class="breadcrumbs">
+            <div class="col-sm-6">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Laboratório Redes de Computadores e Segurança (LARS)</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li>Dashboard</li>
+                            <li class="active">LARS</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content mt-3">
+            <!-- 1ª FILA -->
+            <div class="row lars-computer">
+                <!-- Esquerda -->
+                <div class="col-sm-1 offset-1">
+                        <a href="forms-basic.jsp?id=92"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i> 
+                </div>
+                <div class="col-sm-1 offset-2 mid-left">
+                        <a href="forms-basic.jsp?id=93"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <!-- Direita -->
+                <div class="col-sm-1 offset-2 mid-right">
+                    <a href="forms-basic.jsp?id=94"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1 offset-2">
+                    <a href="forms-basic.jsp?id=95"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+            </div>
+
+            <!-- 2ª FILA -->
+            <div class="row lars-computer">
+               <!-- Esquerda -->
+                <div class="col-sm-1 offset-1">
+                    <a href="forms-basic.jsp?id=96"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1 offset-2 mid-left">
+                    <a href="forms-basic.jsp?id=97"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <!-- Direita -->
+                <div class="col-sm-1 offset-2 mid-right">
+                    <a href="forms-basic.jsp?id=98"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1 offset-2">
+                    <a href="forms-basic.jsp?id=99"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+            </div>
+            <!-- 3ª FILA -->
+            <div class="row lars-computer">
+                 <!-- Esquerda -->
+                <div class="col-sm-1 offset-1">
+                    <a href="forms-basic.jsp?id=100"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1 offset-2 mid-left">
+                    <a href="forms-basic.jsp?id=101"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <!-- Direita -->
+                <div class="col-sm-1 offset-2 mid-right">
+                    <a href="forms-basic.jsp?id=102"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1 offset-2">
+                    <a href="forms-basic.jsp?id=103"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+            </div>
+            <!-- 4ª FILA -->
+            <div class="row lars-computer">
+                <div class="col-sm-1 offset-1">
+                    <a href="forms-basic.jsp?id=104"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1 offset-2 mid-left">
+                    <a href="forms-basic.jsp?id=105"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <!-- Direita -->
+                <div class="col-sm-1 offset-2 mid-right">
+                    <a href="forms-basic.jsp?id=106"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1 offset-2">
+                    <a href="forms-basic.jsp?id=107"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+
+            </div>
+            <!-- 5ª FILA -->
+            <div class="row lars-computer">
+                <!-- Esquerda -->
+                <div class="col-sm-1 offset-1">
+                    <a href="forms-basic.jsp?id=108"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1 offset-2 mid-left">
+                    <a href="forms-basic.jsp?id=109"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <!-- Direita -->
+                <div class="col-sm-1 offset-2 mid-right">
+                    <a href="forms-basic.jsp?id=110"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+                <div class="col-sm-1 offset-2">
+                    <a href="forms-basic.jsp?id=111"><i class="pc-icon fa fa-laptop"></i></a>
+                    <i class="status-icon working fa fa-check-circle"></i>
+                </div>
+
+           </div>
+
+
+        </div> <!-- .content -->
+    </div><!-- /#right-panel -->
+
+    <!-- Right Panel -->
+
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+
+    <script src="vendors/chart.js/dist/Chart.bundle.min.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/widgets.js"></script>
+    <script src="vendors/jqvmap/dist/jquery.vmap.min.js"></script>
+    <script src="vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <script src="vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script>
+        (function($) {
+            "use strict";
+
+            jQuery('#vmap').vectorMap({
+                map: 'world_en',
+                backgroundColor: null,
+                color: '#ffffff',
+                hoverOpacity: 0.7,
+                selectedColor: '#1de9b6',
+                enableZoom: true,
+                showTooltip: true,
+                values: sample_data,
+                scaleColors: ['#1de9b6', '#03a9f5'],
+                normalizeFunction: 'polynomial'
+            });
+        })(jQuery);
+    </script>
+
+</body>
+
+</html>

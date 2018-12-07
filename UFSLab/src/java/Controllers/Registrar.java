@@ -16,6 +16,8 @@ import DAO.*;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpSession;
 /**
  *
  * @author gabriel
@@ -69,6 +71,12 @@ public class Registrar extends HttpServlet {
             usuario.setEmail(request.getParameter("email"));
             UserDAO usuarioDAO = new UserDAO();
             usuarioDAO.registrar(usuario);
+           HttpSession session = request.getSession(false);
+            session.setAttribute("user", usuario);
+            
+            RequestDispatcher d = request.getRequestDispatcher("/dashboard.jsp");
+            Logger.getLogger(Registrar.class.getName()).log(Level.SEVERE, request.toString());
+                d.forward(request,response);
         } catch (DAOException ex) {
             Logger.getLogger(Registrar.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {

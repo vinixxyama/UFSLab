@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21ec2097-1acf-42ab-90d9-468bdb82204f" name="Default Changelist" comment="" />
+    <list default="true" id="21ec2097-1acf-42ab-90d9-468bdb82204f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UFSLab/src/java/Controllers/AbrirChamado.java" beforeDir="false" afterPath="$PROJECT_DIR$/UFSLab/src/java/Controllers/AbrirChamado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UFSLab/src/java/Controllers/ChamadosAbertos.java" beforeDir="false" afterPath="$PROJECT_DIR$/UFSLab/src/java/Controllers/ChamadosAbertos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UFSLab/src/java/Controllers/Entrar.java" beforeDir="false" afterPath="$PROJECT_DIR$/UFSLab/src/java/Controllers/Entrar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UFSLab/src/java/Controllers/Registrar.java" beforeDir="false" afterPath="$PROJECT_DIR$/UFSLab/src/java/Controllers/Registrar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UFSLab/src/java/DAO/ChamadoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/UFSLab/src/java/DAO/ChamadoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UFSLab/src/java/DAO/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/UFSLab/src/java/DAO/ConnectionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UFSLab/src/java/DAO/PCDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/UFSLab/src/java/DAO/PCDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UFSLab/src/java/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/UFSLab/src/java/DAO/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UFSLab/src/java/Models/Chamado.java" beforeDir="false" afterPath="$PROJECT_DIR$/UFSLab/src/java/Models/Chamado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UFSLab/web/chamados-abertos.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UFSLab/web/editar-chamado.html" beforeDir="false" afterPath="$PROJECT_DIR$/UFSLab/web/editar-chamado.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UFSLab/web/forms-advanced.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UFSLab/web/forms-basic.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UFSLab/web/header-sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/UFSLab/web/header-sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UFSLab/web/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UFSLab/web/lars.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UFSLab/web/lec.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UFSLab/web/lsa.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UFSLab/web/lso.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UFSLab/web/page-login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UFSLab/web/page-register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UFSLab/web/pages-forget.html" beforeDir="false" afterPath="$PROJECT_DIR$/UFSLab/web/pages-forget.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UFSLab/web/responder-chamado.html" beforeDir="false" afterPath="$PROJECT_DIR$/UFSLab/web/responder-chamado.jsp" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -9,26 +34,26 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1103092497">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.17" value="1" />
-          <entry key="project.open.time.53" value="1" />
-          <entry key="project.opened" value="2" />
-        </counts>
-      </usages-collector>
-    </session>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/UFSLab/web/editar-chamado.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="298" column="16" lean-forward="true" selection-start-line="298" selection-start-column="16" selection-end-line="298" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>lec</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
@@ -41,7 +66,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -52,12 +76,19 @@
             <path>
               <item name="UFSLab" type="b2602c69:ProjectViewProjectNode" />
               <item name="UFSLab" type="462c0819:PsiDirectoryNode" />
-              <item name="UFSLab Helper" type="462c0819:PsiDirectoryNode" />
+              <item name="UFSLab" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="UFSLab" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UFSLab" type="462c0819:PsiDirectoryNode" />
+              <item name="UFSLab" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -91,21 +122,23 @@
       <updated>1541203137347</updated>
       <workItem from="1541203150326" duration="500000" />
       <workItem from="1541203791079" duration="1402000" />
+      <workItem from="1544062301800" duration="712000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1902000" />
+    <option name="totallyTimeSpent" value="2614000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25340393" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25718608" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Learn" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -116,7 +149,8 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="10" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Version Control" order="10" visible="true" weight="0.32843137" />
+      <window_info anchor="right" id="Maven" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -129,8 +163,14 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/UFSLab/web/editar-chamado.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="298" column="16" lean-forward="true" selection-start-line="298" selection-start-column="16" selection-end-line="298" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
