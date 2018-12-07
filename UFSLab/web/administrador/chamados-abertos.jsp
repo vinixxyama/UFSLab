@@ -5,81 +5,41 @@
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="en">
 <!--<![endif]-->
-<script>
-      localStorage.setItem("sala", "lsa");
-</script>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>UFSLab - LSA</title>
-    <meta name="description" content="UFSLab - LSA">
+    <title>UFSLab - Chamados Abertos</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
 
-    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
-    <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="vendors/jqvmap/dist/jqvmap.min.css">
 
+    <link rel="stylesheet" href="../vendors/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="../vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../vendors/selectFX/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="../vendors/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../vendors/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
 
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/custom.css">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-
 </head>
-<script>
-    localStorage.setItem("sala","lsa");
-</script>
 
 <body>
-
-
     <!-- Left Panel -->
 
-    <aside id="left-panel" class="left-panel">
-        <nav class="navbar navbar-expand-sm navbar-default">
-
-            <div class="navbar-header">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
-                <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
-            </div>
-
-            <div id="main-menu" class="main-menu collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="dashboard.jsp"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
-                    </li>
-                    <h3 class="menu-title"><i class="menu-icon fa fa-flask"></i> LaboratÃ³rios</h3><!-- /.menu-title -->
-                    <li>
-                        <a href="lec.jsp"> <i class="menu-icon fa fa-laptop"></i>LEC - Sala 107 </a>
-                    </li>
-                    <li>
-                        <a href="lso.jsp"> <i class="menu-icon fa fa-code"></i>LSO - Sala 109 </a>
-                    </li>
-                    <li>
-                        <a href="lsa.jsp"> <i class="menu-icon fa fa-laptop"></i>LSA - Sala 110 </a>
-                    </li>
-                    <li>
-                        <a href="lars.jsp"> <i class="menu-icon fa fa-wifi"></i>LARS - Sala 111 </a>
-                    </li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </nav>
-    </aside><!-- /#left-panel -->
+    <jsp:include page="sidebar.jsp" />
 
     <!-- Left Panel -->
 
     <!-- Right Panel -->
 
-    <div id="right-panel" class="right-panel lsa-bg">
+    <div id="right-panel" class="right-panel">
 
         <!-- Header-->
         <header id="header" class="header">
@@ -212,7 +172,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>LaboratÃ³rio Sistemas Digitais (LSA)</h1>
+                        <h1>Dashboard</h1>
                     </div>
                 </div>
             </div>
@@ -220,8 +180,8 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li>Dashboard</li>
-                            <li class="active">LSA</li>
+                            <li><a href="dashboard.jsp">Dashboard</a></li>
+                            <li class="active">Chamados Abertos</li>
                         </ol>
                     </div>
                 </div>
@@ -229,123 +189,104 @@
         </div>
 
         <div class="content mt-3">
-           <!-- 1Âª Linha -->
-           <div class="row lsa-computer">
-                <!-- Esquerda-Canto -->
-                <div class="col-sm-1">
-                    <a href="forms-basic.jsp?id=12"><i class="pc-icon fa fa-laptop"></i></a>
-                    <i class="status-icon working fa fa-check-circle"></i>
-                    <div class="id-icon">12</div>
-                </div>
-                <!-- Esquerda-Meio -->
-                <div class="col-sm-1 offset-4 mid-left">
-                    <a href="forms-basic.jsp?id=07"><i class="pc-icon fa fa-laptop"></i></a>
-                    <i class="status-icon working fa fa-check-circle"></i>
-                    <div class="id-icon">07</div>
-                </div>
-                <!-- DIreita-Meio -->
-                <div class="col-sm-1 mid-right">
-                    <a href="forms-basic.jsp?id=06"><i class="pc-icon fa fa-laptop"></i></a>
-                    <i class="status-icon working fa fa-check-circle"></i>
-                    <div class="id-icon">06</div>
-                </div>
-                <!-- Direita-Canto -->
-                <div class="col-sm-1 offset-4">
-                    <a href="forms-basic.jsp?id=01"><i class="pc-icon fa fa-laptop"></i></a> 
-                    <i class="status-icon working fa fa-check-circle"></i>
-                    <div class="id-icon">01</div>
-                </div>
-            </div>
+            <div class="animated fadeIn">
+                <div class="row">
 
-            <!-- 2Âª Linha-->
-            <div class="row lsa-computer">
-                <!-- Esquerda-Canto -->
-                <div class="col-sm-1">
-                    <a href="forms-basic.jsp?id=11"><i class="pc-icon fa fa-laptop"></i></a>
-                    <i class="status-icon working fa fa-check-circle"></i>
-                    <div class="id-icon">11</div>
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Chamados Abertos (LEC 101 - ID 49) </strong>
+                            </div>
+                            <div class="card-body">
+                                <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th class="chamado-desc">Descrição Breve</th>
+                                            <th class="chamado-class">Prioridade</th>
+                                            <th class="chamado-tools">#</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="chamado-desc">System Architect</td>
+                                            <td class="chamado-class">Media</td>
+                                            <td class="chamado-tools">
+                                                <a href="editar-chamado.jsp"><i class="fa fa-wrench"></i></a>
+                                                <a href="responder-chamado.jsp"><i class="fa fa-envelope"></i></a>
+                                                <a href="#"><i class="fa fa-times" data-toggle="modal" data-target="#exampleModal"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="chamado-desc">Loco</td>
+                                            <td class="chamado-class">Alta</td>
+                                            <td class="chamado-tools">
+                                                <a href="editar-chamado.jsp"><i class="fa fa-wrench"></i></a>
+                                                <a href="responder-chamado.jsp"><i class="fa fa-envelope"></i></a>
+                                                <a href="#"><i class="fa fa-times" data-toggle="modal" data-target="#exampleModal"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="chamado-desc">ASdasdasdasdt</td>
+                                            <td class="chamado-class">Baixa</td>
+                                            <td class="chamado-tools">
+                                                <a href="editar-chamado.jsp"><i class="fa fa-wrench"></i></a>
+                                                <a href="responder-chamado.jsp"><i class="fa fa-envelope"></i></a>
+                                                <a href="#"><i class="fa fa-times" data-toggle="modal" data-target="#exampleModal"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Esquerda-Meio -->
-                <div class="col-sm-1 offset-4 mid-left">
-                    <a href="forms-basic.jsp?id=08"><i class="pc-icon fa fa-laptop"></i></a>
-                    <i class="status-icon working fa fa-check-circle"></i>
-                    <div class="id-icon">08</div>
-                </div>
-                <!-- DIreita-Meio -->
-                <div class="col-sm-1 mid-right">
-                    <a href="forms-basic.jsp?id=05"><i class="pc-icon fa fa-laptop"></i></a>
-                    <i class="status-icon working fa fa-check-circle"></i>
-                    <div class="id-icon">05</div>
-                </div>
-                <!-- Direita-Canto -->
-                <div class="col-sm-1 offset-4">
-                    <a href="forms-basic.jsp?id=02"><i class="pc-icon fa fa-laptop"></i></a>
-                    <i class="status-icon working fa fa-check-circle"></i> 
-                    <div class="id-icon">02</div>
+            </div><!-- .animated -->
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Finalizar Chamado</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Você realmente deseja finalizar o chamado?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+                            <button type="button" class="btn btn-danger">Encerrar</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- 3Âª Linha -->
-            <div class="row lsa-computer">
-                <!-- Esquerda-Canto -->
-                <div class="col-sm-1">
-                    <a href="forms-basic.jsp?id=10"><i class="pc-icon fa fa-laptop"></i></a>
-                    <i class="status-icon working fa fa-check-circle"></i>
-                    <div class="id-icon">10</div>
-                </div>
-                <!-- Esquerda-Meio -->
-                <div class="col-sm-1 offset-4 mid-left">
-                    <a href="forms-basic.jsp?id=09"><i class="pc-icon fa fa-laptop"></i></a>
-                    <i class="status-icon working fa fa-check-circle"></i>
-                    <div class="id-icon">09</div>
-                </div>
-                <!-- DIreita-Meio -->
-                <div class="col-sm-1 mid-right">
-                    <a href="forms-basic.jsp?id=04"><i class="pc-icon fa fa-laptop"></i></a>
-                    <i class="status-icon working fa fa-check-circle"></i>
-                    <div class="id-icon">04</div>
-                </div>
-                <!-- Direita-Canto -->
-                <div class="col-sm-1 offset-4">
-                    <a href="forms-basic.jsp?id=03"><i class="pc-icon fa fa-laptop"></i></a>
-                    <i class="status-icon working fa fa-check-circle"></i>
-                    <div class="id-icon">03</div>
-                </div>
-            </div>
-        </div> <!-- .content -->
+        </div><!-- .content -->
+
+
     </div><!-- /#right-panel -->
 
     <!-- Right Panel -->
 
-    <script src="vendors/jquery/dist/jquery.min.js"></script>
-    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
-    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="assets/js/main.js"></script>
+
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+    <script src="../vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../assets/js/main.js"></script>
 
 
-    <script src="vendors/chart.js/dist/Chart.bundle.min.js"></script>
-    <script src="assets/js/dashboard.js"></script>
-    <script src="assets/js/widgets.js"></script>
-    <script src="vendors/jqvmap/dist/jquery.vmap.min.js"></script>
-    <script src="vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
-    <script src="vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-    <script>
-        (function($) {
-            "use strict";
+    <script src="../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="../vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="../vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="../vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+    <script src="../vendors/jszip/dist/jszip.min.js"></script>
+    <script src="../vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
+    <script src="../vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="../vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+    <script src="../assets/js/init-scripts/data-table/datatables-init.js"></script>
 
-            jQuery('#vmap').vectorMap({
-                map: 'world_en',
-                backgroundColor: null,
-                color: '#ffffff',
-                hoverOpacity: 0.7,
-                selectedColor: '#1de9b6',
-                enableZoom: true,
-                showTooltip: true,
-                values: sample_data,
-                scaleColors: ['#1de9b6', '#03a9f5'],
-                normalizeFunction: 'polynomial'
-            });
-        })(jQuery);
-    </script>
 
 </body>
 
