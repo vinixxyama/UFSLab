@@ -16,6 +16,7 @@
         <link rel="apple-touch-icon" href="apple-icon.png">
         <link rel="shortcut icon" href="favicon.ico">
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
         <link rel="stylesheet" href="../vendors/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="../vendors/font-awesome/css/font-awesome.min.css">
@@ -99,6 +100,9 @@
                                     <strong>Abrir Chamado</strong>
                                 </div>
                                 <div class="card-body card-block">
+                                    <div id="alert-success" class="alert alert-success" style="display: none;" role="alert">
+                                        <span class="font-weight-bold">Chamado Aberto!</span> Sua solicitação de reparo foi enviada ao técnico.
+                                    </div>
 
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Descrição</label></div>
@@ -119,18 +123,14 @@
                                             xhttp.send();
                                         }
                                     </script>
-                                    <button type="button" class="btn btn-primary btn-sm" onclick="loadDoc()">
-                                        <i class="fa fa-dot-circle-o"></i> Enviar
-                                    </button>
-
-                                </div>
-                                <div class="card-footer">
-                                    <button type="reset" class="btn btn-danger btn-sm">
-                                        <i class="fa fa-ban"></i> Resetar
-                                    </button>
-                                    <button type="reset" class="btn btn-danger btn-sm" onclick="history.go(-1);">
-                                        <i class="fa fa-ban"></i> Voltar
-                                    </button>
+                                    <div class="card-footer">
+                                        <button type="button" class="btn btn-primary btn-sm" onclick="loadDoc();Mudarestado('alert-success');">
+                                            <i class="fa fa-dot-circle-o"></i> Enviar
+                                        </button>
+                                        <button type="reset" class="btn btn-danger btn-sm" onclick="javascript:history.back(1);">
+                                            <i class="fa fa-rotate-left"></i> Voltar
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -150,3 +150,11 @@
             <script src="../assets/js/main.js"></script>
     </body>
 </html>
+
+<script>
+    function Mudarestado(elemento) {
+        var display = document.getElementById(elemento).style.display;
+        if(display == "none")
+            document.getElementById(elemento).style.display = 'block';
+    }
+</script>

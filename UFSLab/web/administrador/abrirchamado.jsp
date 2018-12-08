@@ -224,8 +224,8 @@
                                     <button type="reset" class="btn btn-danger btn-sm">
                                         <i class="fa fa-ban"></i> Resetar
                                     </button>
-                                    <button type="reset" class="btn btn-danger btn-sm" onclick="history.go(-1);">
-                                        <i class="fa fa-ban"></i> Voltar
+                                     <button type="reset" class="btn btn-danger btn-sm" onclick="javascript:history.back(1);">
+                                        <i class="fa fa-rotate-left"></i> Voltar
                                     </button>
                                 </div>
                             </div>

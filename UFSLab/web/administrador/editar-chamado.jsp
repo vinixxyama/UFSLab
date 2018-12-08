@@ -225,7 +225,7 @@
                                 <button type="submit" class="btn btn-primary btn-sm">
                                     <i class="fa fa-save"></i> Salvar
                                 </button>
-                                <button type="reset" class="btn btn-danger btn-sm">
+                                <button type="reset" class="btn btn-danger btn-sm" onclick="javascript:history.back(1);">
                                     <i class="fa fa-rotate-left"></i> Voltar
                                 </button>
                             </div>

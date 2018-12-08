@@ -118,8 +118,8 @@
                     <div class="id-icon">06</div>
                 </div>
                 <!-- Direita-Canto -->
-                <div class="col-sm-1 offset-4">
-                    <a href="abrirchamado.jsp?id=01"><i class="pc-icon fa fa-laptop"></i></a> 
+                <div class="col-sm-1 offset-4 right">
+                    <a href="abrirchamado.jsp?id=01"><i class="pc-icon  fa fa-laptop"></i></a> 
                     <i class="status-icon working fa fa-check-circle"></i>
                     <div class="id-icon">01</div>
                 </div>
@@ -146,7 +146,7 @@
                     <div class="id-icon">05</div>
                 </div>
                 <!-- Direita-Canto -->
-                <div class="col-sm-1 offset-4">
+                <div class="col-sm-1 offset-4 right">
                     <a href="abrirchamado.jsp?id=02"><i class="pc-icon fa fa-laptop"></i></a>
                     <i class="status-icon working fa fa-check-circle"></i> 
                     <div class="id-icon">02</div>
@@ -173,7 +173,7 @@
                     <div class="id-icon">04</div>
                 </div>
                 <!-- Direita-Canto -->
-                <div class="col-sm-1 offset-4">
+                <div class="col-sm-1 offset-4 right">
                     <a href="abrirchamado.jsp?id=03"><i class="pc-icon fa fa-laptop"></i></a>
                     <i class="status-icon working fa fa-check-circle"></i>
                     <div class="id-icon">03</div>
