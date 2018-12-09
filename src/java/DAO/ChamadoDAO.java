@@ -31,12 +31,12 @@ public class ChamadoDAO {
         r = stmt.executeUpdate();
     }
 
-    public ArrayList<Chamado> mostrarChamados(String pcId) throws SQLException {
+    public ArrayList<Chamado> mostrarChamados(String pcId, String sala) throws SQLException {
         ArrayList<Chamado> chamados = new ArrayList<>();
         PreparedStatement stmt;
         ResultSet r; // will store the query's result
         String SQL = "SELECT *"
-                + "FROM chamado WHERE pcId = '" + pcId + "';";
+                + "FROM chamado WHERE pcId = '" + pcId + "' and sala = '" + sala + "';";
         stmt = connection.prepareStatement(SQL);
         r = stmt.executeQuery();
         while (r.next()) {

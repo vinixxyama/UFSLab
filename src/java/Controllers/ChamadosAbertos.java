@@ -64,20 +64,7 @@ public class ChamadosAbertos extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            //processRequest(request, response);
-            String pcId = request.getRequestURL().toString();
-            HttpSession session = request.getSession();
-            String sala = (String) session.getAttribute("sala");
-            ChamadoDAO cDAO = new ChamadoDAO();
-            ArrayList<Chamado> c_list = cDAO.mostrarChamados(pcId);
-            request.setAttribute("c_list", c_list);
-            RequestDispatcher d = request.getRequestDispatcher("/chamados-abertos.jsp");
-            d.forward(request, response);
-        } catch (DAOException | SQLException ex) {
-            Logger.getLogger(ChamadosAbertos.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+        processRequest(request, response);
     }
 
     /**
@@ -91,7 +78,35 @@ public class ChamadosAbertos extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            //processRequest(request, response);
+            int i;
+            String pcId = request.getHeader("id");
+        String pcIDAux = new String();
+        for (i = 0; i < pcId.length(); i++)
+        {
+            if(pcId.charAt(i) == '=')
+            {
+                i++;
+                break;
+            }
+        }
+        while(i < pcId.length())
+        {
+            pcIDAux += pcId.charAt(i);
+            i++;
+        }        
+        String sala = (String) request.getHeader("sala");
+            ChamadoDAO cDAO = new ChamadoDAO();
+            ArrayList<Chamado> c_list = cDAO.mostrarChamados(pcIDAux,sala);
+            Logger.getLogger(AbrirChamado.class.getName()).log(Level.INFO, "sala={0}", c_list.toString());
+            request.setAttribute("c_list", c_list);
+            RequestDispatcher d = request.getRequestDispatcher("admin/chamados-abertos.jsp");
+            d.forward(request, response);
+        } catch (DAOException | SQLException ex) {
+            Logger.getLogger(ChamadosAbertos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 
     /**

@@ -3,7 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/gabriel/Documents/NetBeansProjects/WebApplication1/src/java/Controllers/ResponderChamado.java</file>
+            <file>file:/C:/Users/gabriel/Documents/NetBeansProjects/WebApplication1/src/java/Models/Chamado.java</file>
+            <file>file:/C:/Users/gabriel/Documents/NetBeansProjects/WebApplication1/src/java/DAO/ChamadoDAO.java</file>
+            <file>file:/C:/Users/gabriel/Documents/NetBeansProjects/WebApplication1/src/java/Controllers/ChamadosAbertos.java</file>
+            <file>file:/C:/Users/gabriel/Documents/NetBeansProjects/WebApplication1/src/java/Controllers/AbrirChamado.java</file>
         </group>
     </open-files>
 </project-private>

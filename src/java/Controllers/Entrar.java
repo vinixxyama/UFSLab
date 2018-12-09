@@ -33,6 +33,16 @@ public class Entrar extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //processRequest(request,response);
+    }
+
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+     * response)
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // TODO Auto-generated method stub
         // TODO Auto-generated method stub
         String username = request.getParameter("email");
         String password = request.getParameter("senha");
@@ -43,8 +53,14 @@ public class Entrar extends HttpServlet {
             if (username.equals(usuario.getEmail()) && !username.isEmpty()) {
                 HttpSession session = request.getSession(false);
                 session.setAttribute("user", usuario);
-                RequestDispatcher d = request.getRequestDispatcher("/dashboard.jsp");
-                //Logger.getLogger(Registrar.class.getName()).log(Level.SEVERE, d.toString());
+                RequestDispatcher d = null;
+                if (usuario.getRA().equals("000000")) {
+                    Logger.getLogger(Registrar.class.getName()).log(Level.INFO, usuario.getNome());
+                    d = request.getRequestDispatcher("/admin/dashboard.jsp");
+                } else {
+                    d = request.getRequestDispatcher("/dashboard.jsp");
+                }
+                Logger.getLogger(Registrar.class.getName()).log(Level.INFO, usuario.getRA());
                 d.forward(request, response);
             } else {
                 // failed to log in
@@ -54,16 +70,6 @@ public class Entrar extends HttpServlet {
             e.printStackTrace();
         }
 
-    }
-
-    /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-     * response)
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // TODO Auto-generated method stub
-        doGet(request, response);
     }
 
 }

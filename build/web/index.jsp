@@ -43,7 +43,7 @@
                     </a>
                 </div>
                 <div class="login-form">
-                    <form action="Entrar" method="GET">
+                    <form action="Entrar" method="POST">
                         <div class="form-group">
                             <label>Email</label>
                             <input type="email" name ="email" class="form-control" placeholder="Email">
